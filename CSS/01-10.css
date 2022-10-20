@@ -1,0 +1,15 @@
+tr{
+    border: 1px solid red; 
+}
+td{
+    border: 1px solid red;
+}
+.tb{
+    border-collapse: collapse;
+}
+.f1{
+    background-color: palegreen;
+}
+.f2{
+    background-color: orange;
+}

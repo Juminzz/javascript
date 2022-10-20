@@ -1,0 +1,16 @@
+th{
+    background-color: aqua;
+    border-bottom: 1px solid black;
+}
+td{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    
+}
+tr{
+    border-bottom: 1px solid black;
+}
+td:first-child{
+    border-left: 1px solid white;
+}
+/* td의 첫번째 자식만 선 화이트 */
