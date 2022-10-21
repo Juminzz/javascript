@@ -1,0 +1,16 @@
+.t1{
+    border-collapse: collapse;
+}
+tr{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+    padding: 20px;
+}
+b{
+    color: red;
+}
+.b1{
+    color: blue;
+}

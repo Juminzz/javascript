@@ -1,0 +1,11 @@
+let boolean = prompt("true나 false 값을 적어주세요.");
+let list='';    
+list += `<h2>논리 연산자</h2>`;
+list += `<h3>입력하신 <mark>${boolean}</mark> 에 대한 결과를 표로 나타내면</h3>`;
+list += `<p>&&연산</p>`;
+list +=`<table class="t1"><tr><td><mark>${boolean}</mark></td><td>&&</td><td>false</td><td>일때 결과는</td><td> <b>${false&&boolean}</b></td></tr>`;
+list +=`<tr><td><mark>${boolean}</mark></td><td>&&</td><td>true</td><td>일때 결과는</td><td><b>${true&&boolean}</b></td></tr></table>`;
+list +=`<p>||연산</p>`;
+list +=`<table class="t1"><tr><td><mark>${boolean}</mark></td><td>||</td><td>false</td><td>일때 결과는</td><td><b class="b1">${false&&boolean}</b></td></tr>`;
+list +=`<tr><td><mark>${boolean}</mark></td><td>||</td><td>true</td><td>일때 결과는</td><td><b class="b1">${true&&boolean}</b></td></tr></table>`;
+document.write (list);
