@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .a1{
+            background-color: blueviolet;
+            animation: t1 1s infinite;
+        }
+        /* @keyframes t1 {
+            from{ background-color: 0;}
+            to {
+                background-color: white;
+            } */
+        /* } */
+        .a2{
+            background-color: blue;
+        }
+        .a3{
+            background-color: yellow;
+        }
+        .a4{
+            background-color: orange;
+        }
+        .a5{
+            background-color: red;
+        }
+        .aa{
+            height: 50px;
+        }
+    </style>
+    <script>
+        let tem = prompt('온도를 입력해주세요');
+        list = '';
+        if (tem >= 32){
+            document.write(`
+            <h3>지금온도는 ${tem} 이며 상태는 정상온도를 벗어났습니다</h3>`);
+        } else if( tem <=32 && tem >=28){
+            document.write(`<h3>지금온도는 ${tem} 이며 상태는 갑갑하네요</h3>`);
+        } else if( tem <=28 && tem >=22){
+            document.write(`<h3>지금온도는 ${tem} 이며 상태는 보통이에요</h3>`);
+        } else if( tem <=22 && tem >=16){
+            document.write(`<h3>지금온도는 ${tem} 이며 상태는 시원하네요</h3>`);
+        } else{
+            document.write(`<h3>지금온도는 ${tem} 이며 상태는 정상온도를 벗어났습니다.</h3>`);
+        }
+        document.write(list);
+    </script>
+    <table border="1">
+        <tr class="bb">
+            <div id="a"><td><h4>16미만</h4></td></div>
+            <td><h4>16이상~22미만</h4></td>
+            <td><h4>22이상~28미만</h4></td>
+            <td><h4>28이상~32미만</h4></td>
+            <td><h4>32~이상</h4></td>
+        </tr>
+        <tr class="aa">
+            <td class="a1"></td>
+            <td class="a2"></td>
+            <td class="a3"></td>
+            <td class="a4"></td>
+            <td class="a5"></td>
+        </tr>
+        <tr>
+            <td><h4>정상온도를 벗어났습니다</h4></td>
+            <td><h4>시원하네요</h4></td>
+            <td><h4>보통이에요</h4></td>
+            <td><h4>갑갑하네요</h4></td>
+            <td><h4>정상온도를 벗어났습니다.</h4></td>
+        </tr>
+    </table>
+</body>
+</html>

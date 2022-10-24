@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    <script>
+        let list1 = Number(prompt('받은돈을 적으세요'));
+        let list = Number(prompt('물건값을 적으세요'));
+        
+        if (list1 == 50000){
+            document.write('받은돈은 50000원이다');
+        }
+        if (list == 16380){
+            document.write('<br>물건값은 16380원이다');
+            document.write(`<br>거스름돈은 ${list1-parseInt(16380)}원이다`);
+        }
+    </script>
+</body>
+</html>

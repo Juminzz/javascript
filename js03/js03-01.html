@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>현재시간 구하기</title>
+</head>
+<body>
+    <script>
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() +1;
+        const day = date.getDate();
+        const hour = date.getHours();
+        const min = date.getMinutes();
+        const sec = date.getSeconds();
+        document.write(`${date}<br>
+        ${year} 년 ${month} 월 ${day} 일${hour} 시 ${min} 분 ${sec} 초 `);
+        if (sec >= 30){
+            document.write(`${date}<br>
+            ${year} 년 ${month} 월 ${day} 일${hour} 시 ${min} 분 ${sec} 초 (30초 이상입니다.) `);
+        }
+        if (sec < 30){
+            document.write(`${date}<br>
+            ${year} 년 ${month} 월 ${day} 일${hour} 시 ${min} 분 ${sec} 초 (30초 미만입니다.)`);
+        }
+        let box = ''
+        // min을 2로 나누었을때 나머지가 0이면 짝수입니다 출력
+        if (min%2 === 0){
+            box = '짝수 분 입니다'
+        }else {
+            box = '홀수 분 입니다'
+        }
+            document.write(`${date}<br>
+            ${year} 년 ${month} 월 ${day} 일${hour} 시 ${min} 분 ${sec} 초'${box}'' `);
+
+
+            document.write(`${date}<br>
+            ${year} 년 ${month} 월 ${day} 일${hour} ${year+1} 년 ${month+1} 월 ${day+6} 일`);
+
+
+            // console.log(date.toISOString); 
+            // toISOString = 한국 표준시
+            // console.log(date.toISOString());
+            // toISOString() = 세계 표준시
+    </script>
+</body>
+</html>

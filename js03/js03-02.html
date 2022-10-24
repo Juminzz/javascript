@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>성적</title>
+</head>
+<body>
+    <script>
+        let list = prompt('성적을 입력하세요');
+        if ( list == 100){
+            document.write('학점은 A+ 이다.');
+        } else if ( list <= 99 && list >= 90){
+            document.write("학점은 A 이다");
+        } else if ( list <= 89 && list >=80){
+            document.write("학점은 B 이다");
+        } else if ( list <= 79 && list >=70){
+            document.write('학점은 C 이다');
+        } else if ( list <=69 && list >=61){
+            document.write('학점은 D 이다');
+        } else {
+            document.write("학점은 f 이다");
+        }
+        // 마지막 else는 위에 조건을 다 충족 시키지 못했을때 else값이 나온다.
+    </script>
+</body>
+</html>
