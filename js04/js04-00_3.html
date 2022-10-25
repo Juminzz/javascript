@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        const ran = parseInt(Math.random()*100+1);
+        console.log(ran);
+        if (ran > 10 && ran <= 30){
+            document.write("3등급 당첨");
+        }
+        if (ran > 30){
+            document.write("4등급 당첨");
+        }
+        if (ran == 0){
+            document.write('1등급 당첨');
+        }
+        if (ran >= 1 && ran <= 9){
+            document.write("2등급 당첨");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

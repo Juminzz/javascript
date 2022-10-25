@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<style> 
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <script>
+        // for(let i=1;i<36 ; i++  ){ 
+	    // document.write(i+'번째 입니다.'+'<br>')
+        // }
+        // for(let i=77;i>=38 ; i--){
+        //     document.write(i+'번째 입니다'+'<br>');
+        // }
+        // let list=`<table><tr>`          // 표 시작할 테이블과 tr을 정해준다
+        // for( let i= 1; i<=40; i++){     // i가 1부터 40까지 1씩 증가한다
+        //     list +=`<td>${i}</td>`      // td = i 가 40까지 나온다
+        // }
+        // list +=`</tr></table>`          // 테이블과 tr 닫아준다
+        // document.write(list);
+
+        let list=`<table><tr>`          // 표 시작할 테이블과 tr을 정해준다
+        for( let i= 40; i>=1; i--){     // i가 1부터 40까지 1씩 감소한다
+            list +=`<td>${i}</td>`      // td = i 가 40까지 나온다
+        }
+        list +=`</tr></table>`          // 테이블과 tr 닫아준다
+        document.write(list);
+    </script>
+</body>
+</html>

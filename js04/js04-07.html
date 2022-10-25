@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>for 구문안의 for문</title>
+</head>
+<body>
+    <script>
+        let box = '';
+        for (let j=0;j<10;j++){
+            // box +=`${j}:`
+            box += (j+1)+":"; // 위랑 같은 구문
+            for (let i= 0;i<10;i++){
+                box +=`${i} `;    // 밑이랑 같은 구문
+                 // box +="  "+i+" ";
+        }
+        box += `<br>`  // 0~9 까지 간 후에 br 띄워줌
+    }       // for 구문을 하나더 써서 더 반복 하겠다.
+        
+        document.write(box);
+    </script>
+</body>
+</html>

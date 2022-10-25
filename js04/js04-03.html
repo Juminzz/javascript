@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>배열 요소 제거</title>
+</head>
+<body>
+    <script>
+        const num = [1,2,3,4,5,6,7,8,9,10];
+        // let num_m = num.splice(3,3);   // 4,5,6 .splice(인덱스, 제거할 요소 )
+        
+        // const inum = num.indexOf(7);  // 인덱스 위치를 찾는다. 없을땐 -1값을 리턴
+        console.log(num);
+        let cc = 7;
+        let num_m = num.splice(num.indexOf(cc),1);  // 인덱스의 위치를 찾는 값 index of
+        console.log(num);
+
+        const str = '동해물과백두산이 마르고';
+        console.log(str.indexOf('백'));     // 4  값이 나옴 백부터 시작
+        console.log(str.indexOf('두산이')); // 5 
+        console.log(str.indexOf('마르고')); // 9 공백까지 포함
+        console.log(str.indexOf('이 마')); // 7 
+    </script>
+</body>
+</html>

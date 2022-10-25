@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>구구단표 만들기</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 1000px;
+            text-align: center;
+            background-color: rgb(173, 222, 190);
+        }
+        tr{
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write(`<table><tr>`);
+    for(let i = 2; i <= 9; i++) {
+        document.write(`<br><br>`);
+        document.write(`<td>${i}단<br><br>`);
+    for(let j = 1; j <= 9; j++) {
+        document.write(i + ' * ' + j + ' = ' + (i*j));
+        document.write('<br><br>'); 
+    }
+    document.write(`</td>`);
+}document.write(`</tr></table>`);
+    </script>
+</body>
+</html>
