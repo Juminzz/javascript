@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>while문</title>
+</head>
+<body>
+    <script>
+        const arr =['서울','부산','대구','대전','광주','포항','경주'];
+        let i = 0;
+        // while (confirm('계속 할까요 ? ')){  // 입력을 받아 중지
+        //     i++
+        //     alert(`${i}번째 반복입니다.`);
+        // }
+
+        // while (i<arr.length){
+        //     console.log(`%c   ${i}:${arr[i]}`,`color:blue`);  
+        //     i++              // i++가 위에있으면 1을 먼저 더헤서 서울이안나옴
+        // }
+
+
+        for (let i=0;i<=6;i+=1){
+            console.log(`%c${i}:${arr[i]}`,`color:green;`);
+        }
+    </script>
+</body>
+</html>
