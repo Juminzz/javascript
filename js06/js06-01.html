@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>별 풀이</title>
+</head>
+<body>
+    <script>
+        let star = "";
+        for(let i=0;i<10;i++){
+            for (let j=10;j>i+1;j--){     // 빈칸을 역으로 줄어들도록함
+                star += " ";
+            }
+             for (let j=0;j<2*i+1;j++){   // 2n+1 스타일로 for문을 빠져나감
+                star += "*";
+            }
+            star +='\n'
+        }
+        console.log(star);
+    </script>
+</body>
+</html>

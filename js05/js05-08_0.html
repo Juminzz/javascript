@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>스무고개</title>
+</head>
+<body>
+    <script>
+        // while문으로 만든 스무고개
+        let user ='';
+        let c1 =5;
+        const ran = parseInt(Math.random()*100+1);
+        while(c1>0){
+            c1--        // 틀릴때마다 c1이 감소한다.
+            user= prompt(`1에서 100까지 숫자를 하나만 적으세요`);
+            if (ran==user){
+                alert('축하합니다 정답입니다. 값은'+ran);
+                break;          // ran이 user와 같을때 그만둬라
+            }
+            else if(ran>user){  // 랜덤 숫자가 사용자가 입력한 값보다 클때
+                alert('정답이 더 큰수입니다. 남은기회 :'+c1);
+            }
+            else if(ran<user){  // 랜덤 숫자가 사용자가 입력한 값보다 작을때
+                alert('정답이 더 작은 수 입니다. 남은기회 :'+c1);
+            }
+    }
+    if (ran==user){
+                document.write(`<h1>정답입니다 축하드려요 !!</h1>`);
+            }else{
+                document.write(`<h1>기회를 모두 소진하셨습니다. <br><br>정답은 ${ran}입니다.</h1>`);
+            }
+    </script>
+</body>
+</html>

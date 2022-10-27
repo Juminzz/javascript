@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>확률 계산</title>
+</head>
+<body>
+    <script>
+        console.time();
+        let dice = d1 = d2 = d3 = d4 = d5 = d6 = er = 0;
+        for (let i=0;i<1000000;i++){
+            // parseInt = 2022년 x => 2022   45.5566 => 45
+            // Math.floor = 소수점이하 버림
+            lucky = Math.floor(Math.random()*100)+1;
+            dice = Math.floor(Math.random()*6)+1;
+            if (dice==1){if(lucky<=4){d3++}else{d1++}}
+            else if (dice==1){if(lucky<=4){d3++}else{d1++}}
+            else if (dice==2){if(lucky<=4){d3++}else{d2++}}
+            else if (dice==3){d3++;}
+            else if (dice==4){if(lucky<=4){d3++}else{d4++}}
+            else if (dice==5){if(lucky<=4){d3++}else{d5++}}
+            else if (dice==6){if(lucky<=4){d3++}else{d6++}}
+            else(er++);
+        }   
+        document.write('<br><br>'    +'주사위 1의 개수는 : '+d1+'<br>'
+                                     +'주사위 2의 개수는 : '+d2+'<br>'
+                                     +'주사위 3의 개수는 : '+d3+'<br>'
+                                     +'주사위 4의 개수는 : '+d4+'<br>'
+                                     +'주사위 5의 개수는 : '+d5+'<br>'
+                                     +'주사위 6의 개수는 : '+d6+'<br>'+'토탈'+(d1+d2+d3+d4+d5+d6)+'번<br>'+'에러'+er );
+        console.timeEnd();
+    </script>
+</body>
+</html>
