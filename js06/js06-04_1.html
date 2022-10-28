@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>로또</title>
+</head>
+<body>
+    <script>
+        let lotto = [];
+        let num1=num2=num3=num4=num5=num6=0;
+        for (i=0;i<6;i++){   
+            num = Math.floor(Math.random()*45)+1;     // 1부터 45인 랜덤 정수
+            if (lotto.indexOf(num)==-1){      // num이 포함하지 않으면 -1로 나옴
+                lotto.push(num);            // lotto에 num을 추가
+            }else {
+                i--;
+            }
+            if (num==1){num1++}
+            else if (num==2){num2++}
+            else if (num==3){num3++}
+            else if (num==4){num4++}
+            else if (num==5){num5++}
+            else if (num==6){num6++}
+        }
+        lotto.sort(function(a,b){return a-b});
+        document.write(lotto);
+        document.write(num);
+        // document.write(num);
+        document.write(`<br><br>1의 개수는 ${num1}이다<br><br>2의 개수는 ${num2}이다<br><br>3의 개수는 ${num3}이다<br><br>4의 개수는 ${num4}이다<br><br>5의 개수는 ${num5}이다<br><br>6의 개수는 ${num6}이다
+                                                    `);
+
+
+
+
+        
+        // let lott = [];
+        // for (let j=1;j<=45;j++){
+        //     num = parseInt(Math.random()*45)+1; 
+        //     document.write(num+'<br>');
+            
+        // }
+    </script>
+</body>
+</html>
