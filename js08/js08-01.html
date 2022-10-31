@@ -17,6 +17,9 @@
     <script>
         let list='<table border="1">';
         let k=1;
+        let ran = 0;
+        let lotto=[];
+        let result=[];
 
         for (let i=0;i<5*2;i++){          // 0~5 까지 tr을 만듬
             list +=`<tr>`
@@ -27,12 +30,58 @@
             }else{
                 for (let j=0;j<10;j++){  
                     list +=('<td>d</td>');
+                }
             }
-        }
             list +=`</tr>`
         }list +=`</table>`
+        
+        for (let i=0;i<45;i++){
+            result[i]=0;
+        }
+        // 배열 result를 0부터 44번 자리까지 0으로 공간을 만듦
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        let num = [];
+        let box=[];
+        for(let z=0;z<45;z++)box[z]=0; 
+
+        for (let j=0;j<100;j++){
+            if (num.indexOf(lotto)==-1){
+                num.push(ran);   
+        
+            }
+
+            
+            
+           
+           
+           
+            /* 로또 하나 뱉어내는 기계 */
+        for (let o=0;o<6;o++){
+            ran = Math.floor(Math.random()*45)+1;
+            if (lotto.indexOf(ran)==-1){
+                lotto.push(ran);
+            }
+
+        }
+        /* 로또 하나 뱉어내는 기계 */
+        }
         document.write(list);
-         
+        document.write(num);
+        document.write(lotto);
+        
     </script>
 </body>
 </html>

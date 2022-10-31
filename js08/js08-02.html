@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="chart_div"></div>
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+const data_box =[
+            // ['로또', '2022 로또분석표',],
+            // ['New York City, NY', 8175000],
+            // ['Los Angeles, CA', 3792000],
+            // ['Chicago, IL', 2695000],
+            // ['Houston, TX', 2099000],
+            // ['Philadelphia, PA', 1526000]
+      ]
+
+      data_box.push(['로또','로또분석'])
+        for (let i=0;i<45;i++){
+	        data_box.push([(i+1)+"",i])
+}
+function drawBasic() {
+
+        var data = google.visualization.arrayToDataTable(data_box);
+
+        var options = {
+            title: '로또 번호 확률 분석',
+            chartArea: {width: '50%',height: '100%'},
+            hAxis: {
+            title: '번호출현 개수',
+            minValue: 0
+        },
+            vAxis: {
+                title: '로또번호통계'
+        }
+      };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+    }
+
+
+
+    //  arr3 =[ ]
+// arr3.push(['로또','로또분석'])
+// for (let i=0;i<45;i++){
+// 	arr3,push(['',0])
+// }
+    </script>
+</body>
+</html>
