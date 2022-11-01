@@ -13,75 +13,287 @@
     </style>
 </head>
 <body>
-    </table>
     <script>
         let list='<table border="1">';
-        let k=1;
-        let ran = 0;
-        let lotto=[];
-        let result=[];
+        let k=1; // 테이블
+        let q=0; // 테이블
+        let ran = 0; // 로또 랜덤 숫자
+        let lotto=[]; //  로또 뽑는 숫자
+        let result=[]; // 초기화
+        let res=[]; // 
+        const box=[]; //
+        for (let i=0;i<45;i++){
+            box[i]=0;
+        }
 
-        for (let i=0;i<5*2;i++){          // 0~5 까지 tr을 만듬
+            
+        
+        // // 배열 초기화        
+        // for(let j=0;j<6;j++)box[res[j]-1]++ // 번호별 개수 출력
+        // for (let i=0;i<45;i++){
+        //     result[i]=0;
+        // }    
+        // for(let a=0;a<45;a++)box.push(0);
+        
+        
+        for (let j=0;j<10;j++){
+
+
+
+
+
+            for (let o=0;o<6;o++){
+            ran = Math.floor(Math.random()*45)+1;
+            if (lotto.indexOf(ran)==-1){
+                lotto.push(ran)}}
+
+                if (lotto.indexOf(1)!=-1){
+                    box[0]++
+                }
+                if (lotto.indexOf(2)!=-1){
+                    box[1]++
+                }
+                if (lotto.indexOf(3)!=-1){
+                    box[2]++
+                }
+                if (lotto.indexOf(4)!=-1){
+                    box[3]++
+                }
+                if (lotto.indexOf(5)!=-1){
+                    box[4]++
+                }
+                if (lotto.indexOf(6)!=-1){
+                    box[5]++
+                }
+                if (lotto.indexOf(7)!=-1){
+                    box[6]++
+                }
+                if (lotto.indexOf(8)!=-1){
+                    box[7]++
+                }
+                if (lotto.indexOf(9)!=-1){
+                    box[8]++
+                }
+                if (lotto.indexOf(10)!=-1){
+                    box[9]++
+                }
+                if (lotto.indexOf(11)!=-1){
+                    box[10]++
+                }
+                if (lotto.indexOf(12)!=-1){
+                    box[11]++
+                }
+                if (lotto.indexOf(13)!=-1){
+                    box[12]++
+                }
+                if (lotto.indexOf(14)!=-1){
+                    box[13]++
+                }
+                if (lotto.indexOf(15)!=-1){
+                    box[14]++
+                }
+                if (lotto.indexOf(16)!=-1){
+                    box[15]++
+                }
+                if (lotto.indexOf(17)!=-1){
+                    box[16]++
+                }
+                if (lotto.indexOf(18)!=-1){
+                    box[17]++
+                }
+                if (lotto.indexOf(19)!=-1){
+                    box[18]++
+
+                }
+                if (lotto.indexOf(20)!=-1){
+                    box[19]++
+                    
+                }
+                if (lotto.indexOf(21)!=-1){
+                    box[20]++
+                    
+                }
+                if (lotto.indexOf(22)!=-1){
+                    box[21]++
+                    
+                }
+                if (lotto.indexOf(23)!=-1){
+                    box[22]++
+                    
+                }
+                if (lotto.indexOf(24)!=-1){
+                    box[23]++
+                    
+                }
+                if (lotto.indexOf(25)!=-1){
+                    box[24]++
+                    
+                }
+                if (lotto.indexOf(26)!=-1){
+                    box[25]++
+                    
+                }
+                if (lotto.indexOf(27)!=-1){
+                    box[26]++
+                    
+                }
+                if (lotto.indexOf(28)!=-1){
+                    box[27]++
+                    
+                }
+                if (lotto.indexOf(29)!=-1){
+                    box[28]++
+                    
+                }
+                if (lotto.indexOf(30)!=-1){
+                    box[29]++
+                    
+                }
+                if (lotto.indexOf(31)!=-1){
+                    box[30]++
+                    
+                }
+                if (lotto.indexOf(32)!=-1){
+                    box[31]++
+                    
+                }
+                if (lotto.indexOf(33)!=-1){
+                    box[32]++
+                    
+                }
+                if (lotto.indexOf(34)!=-1){
+                    box[33]++
+                    
+                }
+                if (lotto.indexOf(35)!=-1){
+                    box[34]++
+                    
+                }
+                if (lotto.indexOf(36)!=-1){
+                    box[35]++
+                    
+                }
+                if (lotto.indexOf(37)!=-1){
+                    box[36]++
+                    
+                }
+                if (lotto.indexOf(38)!=-1){
+                    box[37]++
+                    
+                }
+                if (lotto.indexOf(39)!=-1){
+                    box[38]++
+                    
+                }
+                if (lotto.indexOf(40)!=-1){
+                    box[39]++
+                    
+                }
+                if (lotto.indexOf(41)!=-1){
+                    box[40]++
+                    
+                }
+                if (lotto.indexOf(42)!=-1){
+                    box[41]++
+                    
+                }
+                if (lotto.indexOf(43)!=-1){
+                    box[42]++
+                    
+                }
+                if (lotto.indexOf(44)!=-1){
+                    box[43]++
+                    
+                }
+                if (lotto.indexOf(45)!=-1){
+                    box[44]++
+                    
+                }
+                result[j]=0;
+            }
+            
+            for (let i=0;i<5*2;i++){          // 0~5 까지 tr을 만듬
             list +=`<tr>`
                 if (i%2 ==0){
                 for (let j=0;j<10;j++){     // 0~10까지 td를 만들고 k를 증가시킴
                     list +=('<td>'+k++ +'</td>');
                 }
             }else{
-                for (let j=0;j<10;j++){  
-                    list +=('<td>d</td>');
-                }
-            }
+                for (let j=0;j<10;j++){ 
+                    if(q<45){
+                        list +=(`<td>${box[q++]}</td>`);
+                    }
+                    else {
+                        list +=(`<td>X</td>`);
+                    }
+                }    
+            }    
             list +=`</tr>`
         }list +=`</table>`
         
-        for (let i=0;i<45;i++){
-            result[i]=0;
-        }
-        // 배열 result를 0부터 44번 자리까지 0으로 공간을 만듦
-
-
-
-
-
-
-
-
-
-
-
-
-
         
-        let num = [];
-        let box=[];
-        for(let z=0;z<45;z++)box[z]=0; 
-
-        for (let j=0;j<100;j++){
-            if (num.indexOf(lotto)==-1){
-                num.push(ran);   
         
-            }
-
-            
-            
-           
-           
-           
-            /* 로또 하나 뱉어내는 기계 */
-        for (let o=0;o<6;o++){
-            ran = Math.floor(Math.random()*45)+1;
-            if (lotto.indexOf(ran)==-1){
-                lotto.push(ran);
-            }
-
-        }
+        
+        
+        
+        
+    
+        
         /* 로또 하나 뱉어내는 기계 */
-        }
+        // for (let o=0;o<6;o++){
+        //     ran = Math.floor(Math.random()*45)+1;
+        //     if (lotto.indexOf(ran)==-1){
+        //         lotto.push(ran);
+        //     }
+        // }
+        /* 로또 하나 뱉어내는 기계 */
         document.write(list);
-        document.write(num);
-        document.write(lotto);
-        
-    </script>
+        // document.write(num);
+        document.write(`1번 ${box[0]}`);
+        document.write(`<br>2번  ${box[1]}`);
+        document.write(`<br>3번 ${box[2]}`);
+        document.write(`<br>4번 ${box[3]}`);
+        document.write(`<br>5번 ${box[4]}`);
+        document.write(`<br>6번 ${box[5]}`);
+        document.write(`<br>7번 ${box[6]}`);
+        document.write(`<br>8번 ${box[7]}`);
+        document.write(`<br>9번 ${box[8]}`);
+        document.write(`<br>10번 ${box[9]}`);
+        document.write(`<br>11번 ${box[10]}`);
+        document.write(`<br>12번 ${box[11]}`);
+        document.write(`<br>13번 ${box[12]}`);
+        document.write(`<br>14번 ${box[13]}`);
+        document.write(`<br>15번 ${box[14]}`);
+        document.write(`<br>16번 ${box[15]}`);
+        document.write(`<br>17번 ${box[16]}`);
+        document.write(`<br>18번 ${box[17]}`);
+        document.write(`<br>19번 ${box[18]}`);
+        document.write(`<br>20번 ${box[19]}`);
+        document.write(`<br>21번 ${box[20]}`);
+        document.write(`<br>22번 ${box[21]}`);
+        document.write(`<br>23번 ${box[22]}`);
+        document.write(`<br>24번 ${box[23]}`);
+        document.write(`<br>25번 ${box[24]}`);
+        document.write(`<br>26번 ${box[25]}`);
+        document.write(`<br>27번 ${box[26]}`);
+        document.write(`<br>28번 ${box[27]}`);
+        document.write(`<br>29번 ${box[28]}`);
+        document.write(`<br>30번 ${box[29]}`);
+        document.write(`<br>31번 ${box[30]}`);
+        document.write(`<br>32번 ${box[31]}`);
+        document.write(`<br>33번 ${box[32]}`);
+        document.write(`<br>34번 ${box[33]}`);
+        document.write(`<br>35번 ${box[34]}`);
+        document.write(`<br>36번 ${box[35]}`);
+        document.write(`<br>37번 ${box[36]}`);
+        document.write(`<br>38번 ${box[37]}`);
+        document.write(`<br>39번 ${box[38]}`);
+        document.write(`<br>40번 ${box[39]}`);
+        document.write(`<br>41번 ${box[40]}`);
+        document.write(`<br>42번 ${box[41]}`);
+        document.write(`<br>43번 ${box[42]}`);
+        document.write(`<br>44번 ${box[43]}`);
+        document.write(`<br>45번 ${box[44]}`);
+        </script>
 </body>
 </html>
