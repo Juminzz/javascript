@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>함수 스코프</title>
+</head>
+<body>
+    <script>
+        function myscope (){
+            var a = '나는 var 입니다.';
+            console.log(a);
+            {
+                var b = '나는 내부 var입니다.' // let은 범위안에서만 쓴다.
+                let c = '나는 내부 let입니다.' // {}는 범위 지정했을때 효율성이 더높다
+            }  // {} 는 function안에 하나의 내부를 포함한다.
+            // 언어는 로컬을 많이 쓴다.
+            console.log(b);
+            console.log(c);
+        }
+    </script>
+</body>
+</html>

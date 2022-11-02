@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>a부터b까지 합</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            let num = 0;        // 변수선언
+            for (let i=a;i<=b;i++){         // i가 a부터 b까지 i씩증가
+                num += i;           // num 변수에 i를 추가한다.
+            }
+            return num;         // num값을 반환한다.
+        }
+        console.log (`1부터 100까지의 합 : ${add(1,100)}`);
+        console.log (`1부터 200까지의 합 : ${add(1,200)}`);
+        console.log (`1부터 300까지의 합 : ${add(1,300)}`);
+    </script>
+</body>
+</html>

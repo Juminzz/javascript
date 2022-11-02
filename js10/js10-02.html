@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>익명함수,무명함수</title>
+</head>
+<body>
+    <script>
+        let vadd = function (a,b){
+            return a+b;
+        }
+        console.log(vadd(5,10));    // vadd의값이 a,b인데 5,10이니 5+10
+        // console.log(typeof(vadd(5,10)));  // vadd의 타입의 종류
+        console.log(typeof(vadd));       // function이나옴 (함수)
+
+
+        // let vadd2 = function (a,b){
+        //     return a+b+b;
+        // }                
+        // console.log(vadd2(5,10));
+
+        
+        let vadd2 = (function (a,b){
+            return a+b+b;
+        })(5,10)                    // 결과 number 나옴 () 덮음
+        console.log(typeof(vadd2));
+        
+    </script>
+</body>
+</html>

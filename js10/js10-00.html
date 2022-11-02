@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>return과 console.log</title>
+</head>
+<body>
+    <script>
+        function simGood(cookie,ea){
+            let sum = cookie*ea
+            return sum              // 
+        }
+        function simBad(cookie,ea){
+            let sum = cookie*ea
+            console.log(sum);
+        }
+
+        // console은 보여주기식이고 return은 값을 출력해줌 (undefined)
+        /*
+            var hand = simGood(1100,5)      hand는 return 한것이고
+            undefined                       han2은 console만 한것이다
+            var han2 = simBad(1100,5)
+            js10-00.html:14 5500
+            undefined
+            hand
+            5500
+            han2
+            undefined
+        */
+    </script>
+</body>
+</html>
