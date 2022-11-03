@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>최소값</title>
+</head>
+<body>
+    <script>
+        // let arr = [];
+        // for (let i=0;i<7;i++){
+        //     ran = Math.floor(Math.random()*100)+1;
+        //     if (arr.indexOf(ran)==-1){
+        //         arr.push(ran);
+        //     }else{
+        //         i--
+        //     }
+        // }
+        // document.write(arr);
+
+        // function minA(arr){
+        //     if (arr.length===0){
+        //         return 0;
+        //     }else {
+
+        //     }
+        // }
+
+        function min(array){
+            let output = array[0];
+            for (const item of array){
+                if (output > min){
+                    output =item;
+                }
+            } return output;
+        }
+        const testArray = [32,12,42,25,66]
+        
+    </script>
+</body>
+</html>

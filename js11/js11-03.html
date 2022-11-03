@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>최소값/최대값</title>
+</head>
+<body>
+    <script>
+        function rand(num){
+            const arr = [];
+            let ran = 0;
+            for (let i=0;i<num;i++){
+                ran = Math.floor(Math.random()*100)+1
+                arr[i] = ran;
+            }
+            return arr;
+        }
+        let choice = rand(7)
+        function min(arr_in){       // 매개변수 arr_in
+            let resultmin = arr_in[0]; 
+            for (let j=0;j<arr_in.length;j++){
+            if (resultmin > arr_in[j]){
+                resultmin = arr_in[j];
+            }
+        }
+        return resultmin;
+    }
+    function max(arr_in){       // 매개변수 arr_in
+            let resultmax = arr_in[0]; 
+            for (let max of arr_in){   // for of문 arr_in이 처음부터 끝까지 max와 비교함
+            if (resultmax < max){ 
+                resultmax = max;
+            }
+        }
+        return resultmax;
+    }
+    document.write(choice + "<br>최소값은 : "+ min(choice) +"<br>최대값은"+ max(choice));
+    document.write("<br><br><br><br>"+rand(7)+"<br>"+rand(7)+"<br>"+rand(7)+"<br>"+rand(7)+"<br>"+rand(7)+"<br>");
+
+    // 내일 깃허브 이고너어 한다했음
+    </script>
+</body>
+</html>
