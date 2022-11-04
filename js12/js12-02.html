@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>나머지매개변수 2</title>
+</head>
+<body>
+    <script>
+        function min(...items){     // ... items는 나머지 매개변수임
+            let output = items[0]  // items의 처음 값
+            for (let min of items){
+                if (output > min){    // 최소값이 더클때
+                    output = min        // min을 넣어줌
+                }
+            }
+            return output;
+        }
+        console.log(min(22,25,31,1,43,52)); // ...items가 있어서 대괄호로 치니까 대괄호 안넣어도됨
+    </script>
+</body>
+</html>

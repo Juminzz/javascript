@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>나머지 매개변수 0</title>
+</head>
+<body>
+    <script>
+        let v1;
+        let v2;
+        function what(...items){
+            return items;
+        }
+        v1 = what(11,22,33);      // 배열로 값이 나옴
+        v2 = what([44,55,66]);      // 배열안에 배열이 나옴
+        console.log (v1);    // [11,22,33]
+        // console.log (v1[0]);    // 11
+        // console.log (v1[0][0]); // undefined
+        console.log (v2);       // [Array(3)]
+        // console.log (v2[0]);    // (3) [44, 55, 66]
+        // console.log (v2[0][0]); // 44
+
+        console.log (...v1);
+        console.log (...v2);
+    </script>
+</body>
+</html>

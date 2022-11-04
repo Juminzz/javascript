@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>나머지 매개변수</title>
+</head>
+<body>
+    <script>
+    // function sample(...items){   // ...은 나머지 매개변수를 출력해준다
+    //                              // 그리고 배열로 출력 된다.
+    //     console.log (items);
+    // }
+    // sample(1);          
+    // sample(1.,2);      
+    // sample('안녕');
+    // sample([1,2,3],[4,5]);
+    // sample([(1,2,33,42)],[(4,5)]);
+    // sample(4,5,6,7,82);
+
+
+
+    function sample(name,age,...items){   
+        console.log (name,age,items);
+    }
+    sample(1);          // 1 undefined []
+    sample(1.,2);       // 1 2 []
+    sample('안녕');     // 안녕 undefined []
+    sample([1,2,3],[4,5]);  // (3) [1, 2, 3] (2) [4, 5] []
+    sample([(1,2)],[(4,5)]);  // [2]0: 2length: 1[[Prototype]]: Array(0) [5] []
+    sample(4,5,6,7,82);     // 4 5 (3) [6, 7, 82]
+</script>
+</body>
+</html>
