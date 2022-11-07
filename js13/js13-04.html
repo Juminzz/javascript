@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>(구버전) 전개연산자 이전 apply()</title>
+</head>
+<body>
+    <script>
+        // ()안에 최대값 나옴, 배열은 안된다
+        let base = Math.max(13,14,68,34,65,77,23,54);  // 77
+        let arr1 = [13,14,68,34,65,77,23,54];   // 배열
+        let result1 = Math.max(arr1); // NaN= 배열이라 값 안나옴
+        let result2 = Math.max(...arr1); // 나머지 매개변수 77
+        let result3 = Math.max.apply(null,arr1);  // apply는 배열 하나하나를 푼다. 
+        console.log (base); // 77
+        console.log (result1);  // NaN 
+        console.log (result2);  // 77
+        console.log (result3);  // 77
+    </script>
+</body>
+</html>

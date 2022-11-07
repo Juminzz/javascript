@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>기본 매개변수</title>
+</head>
+<body>
+    <script>
+        // 최저임금으로 최대한 일하는 경우
+        function eargings(name, wage=9160, hours=40){
+            console.log (`# ${name} 님의 급여정보`);
+            console.log (`- 시급 : ${wage}원`);
+            console.log (`- 근무시간 : ${hours}시간`);
+            console.log (`- 급여 : ${wage*hours}원`);
+            console.log (`- 월급 : ${wage*hours*4}원`);
+            console.log ('====================================');
+            document.write (`# ${name} 님의 급여정보)<br>
+                            - 시급 : ${wage}원<br>
+                            - 근무시간 : ${hours}시간<br>
+                            - 급여 : ${wage*hours}원<br>
+                            - 월급 : ${wage*hours*4}원<br>
+                            ====================================`);
+            return (`# ${name} 님의 급여정보)<br>
+                            - 시급 : ${wage}원<br>
+                            - 근무시간 : ${hours}시간<br>
+                            - 급여 : ${wage*hours}원<br>
+                            - 월급 : ${wage*hours*4}원<br>
+                            ====================================`);
+        }
+        // eargings(`구름`)
+    </script>
+</body>
+</html>
