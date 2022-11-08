@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 속도</title>
+</head>
+<body>
+    <script>
+        const arr = [];
+        for (let i=0;i<10000;i++){arr.push(i)}
+
+        console.time('for - type1');
+        const cnt = arr.length;
+        for (let i=cnt;i>0;i--){}
+        console.timeEnd('for - type1');
+
+
+        // console.time('for - type(10000)');
+        // for (let i=0;i<10000;i++){}
+        // console.timeend('for - type(10000)');
+        
+        console.time('for - type(let)');
+        for (let i=0;i<arr.length;i++){}
+        console.timeEnd('for - type(let)');
+
+        console.time('forEach')
+        arr.forEach(function(value,index){})
+        console.timeEnd('forEach');
+
+        console.time('for - type(var)');
+        for (var i=0;i<arr.length;i++){}
+        console.timeEnd('for - type(var)');
+    </script>
+</body>
+</html>

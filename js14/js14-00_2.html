@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [343,77,11];
+        arr.forEach (function(value,index,array){
+        console.log(value,index,array)
+        });
+       // arr.forEach(console.log); // 위랑 같은내용
+
+       const test = arr.map (function(value,index,array){
+            console.log (value,index,array);
+       })
+       console.log(test);
+
+       
+
+       const numbers = [0,1,2,3,4,5];
+       const evenNumbers = numbers.filter(function(value){
+        return value % 2 ===0;
+       })
+       console.log(`원래 배열 : ${numbers}`);
+       console.log(`짝수만 추출 : ${evenNumbers}`);
+    </script>
+</body>
+</html>

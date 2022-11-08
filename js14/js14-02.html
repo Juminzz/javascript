@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>for Each</title>
+</head>
+<body>
+    <script>
+        // arr = [`안녕`,123,10000,777];
+        // arr.forEach(function(value,index,array){
+        //     console.log(index+`번째 요소 `+ value);
+        // })
+
+
+        let arr =[];
+        for (let i=0;i<=20;i++){
+            arr[i] += i
+        }
+            arr.forEach(function (value,index,array){
+                if(index % 2){
+                    console.log (value);
+                }else {
+                    // console.log (index);S
+                }
+            })
+    </script>
+</body>
+</html>

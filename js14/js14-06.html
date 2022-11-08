@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>문제풀이</title>
+</head>
+<body>
+    <script>
+        // 예제 
+        // 1) 20부터 90까지 짝수인 배열을 나열하시오.
+        // 2) 짝수이고 35이상 10의 배수를 나열하시오.
+
+        // const num = [];
+        // for (let i=20;i<90;i++){
+        //     num.push(i);
+        // } 
+        // num
+        // .filter(v=>v%2==0 && v>35 && v%10 ===0)  // 참값이면 v에 대입
+        // .map(v=>v*2)             // v에 2를 곱한값을 v에 대입
+        // .forEach(v=>console.log(v))      // v를 콘솔로그에 출력
+
+
+        // 예제
+        // 1) 글자의 크기값(length)을 가진 새로운 배열을 만드시오.
+        // 2) 6글자가 넘어가는 단어를고르시오.
+
+        const words = ['kiwi','orange','banana','exuberant','destruction','present'];
+        const words_n = words.map(v=>v.length)
+        words
+        .filter(v=>v.length>6)
+        .forEach(v=>console.log(`${v} 단어의 글자 수 : ${v.length}`));
+    </script>
+</body>
+</html>
