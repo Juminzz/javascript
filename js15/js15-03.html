@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>연습문제</title>
+</head>
+<body>
+    <script>
+        const arr = Array(100).fill(0).map((v,i)=>v=i+1)
+        console.log(arr);
+        const arr_i = arr.reduce((a,c)=>{
+            a.push(c%2?'짝수':'홀수');
+            return a
+        },[])
+        // console.log(arr_i);
+
+        const arr_o = arr.reduce((a,c)=>{
+            if(c>=0 && c<=32)a.push(c+2);return a
+        },[])
+        console.log (arr_o);
+    </script>
+</body>
+</html>

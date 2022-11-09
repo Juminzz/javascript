@@ -1,0 +1,12 @@
+객체 -  {키:값, 키:값, 키:값}
+
+Array()	fill()	from() // 유사배열 -> 배열
+
+for
+forEach()
+for of
+for in
+
+map,filter,forEach
+
+reduce(function,초기값)

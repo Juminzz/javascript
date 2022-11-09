@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>예제</title>
+</head>
+<body>
+    <script>
+        // const arr = [];
+        // for (let i=0;i<=32;i+=2){arr.push(i);}
+        // for (let i=32;i<70;i++){arr.push(i);}
+        // for (let i=100;i>=70;i-=2){arr.push(i);}
+        // arr.forEach(v=>console.log(v+`는(은) ${v%2==0}`)) 
+        // 내가 풀다 만 문제
+
+
+
+        arr = [];
+        arr1 = [];
+        ct = 0;
+
+        /* for 방식 */
+        // for (let i=0;i<=100;i++){
+        //     if (i>=0&&i<=32){arr.push(ct+=2)}    
+        //     if (i>32&&i<70){arr.push(++ct)}    
+        //     if (i>=70&&i<=100){arr.push(ct-=2)}
+        // }
+        
+        /* Array , fill 방식 */
+        Array(101).fill(0).map((v,i,a)=>{
+            if (i>=0&&i<=32){arr.push(ct+=2)}    
+            if (i>32&&i<70){arr.push(++ct)}    
+            if (i>=70&&i<=100){arr.push(ct-=2)}
+        });
+
+        // /* map 방식 */
+        // arr.map((v,i)=>{
+        // if(v%2==0){arr1[i]='쩍수'
+        // }else{
+        //     arr1[i]='홀수'
+        // }})
+        // console.log(arr1);
+
+        /* map의 삼항연산자 방식 */
+        arr1 = arr.map((v=>v%2==0?'짝수':'홀수'))
+        arr.forEach((v,i)=>console.log(`${i}번째 수는 ${v}이고 ${arr1[i]}이다`))
+        console.log(arr1);
+    </script>
+</body>
+</html>

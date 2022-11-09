@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>reduce</title>
+</head>
+<body>
+    <script>
+        // arr = [1,2,3,4,5,6,7,8,9,10];
+        const arr = Array(10).fill(0).map((v,i)=>v=i+1)
+        // console.log(arr);
+        let sum = arr.reduce((acc,cur,idx,ary)=>{ // acc:누적값,cur:현재값,idx:인덱스,ary:어레이
+            console.log(acc,cur,idx,ary); // 각각의 값을 확인
+            return acc+cur  // 최종합을 위해 마지막으로 acc + cur해서 리턴
+    },0)    // 0은 초기값
+        console.log(sum);
+    </script>
+</body>
+</html>
