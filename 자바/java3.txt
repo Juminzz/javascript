@@ -1,0 +1,8 @@
+동기  synchronous		//순서대로 함
+
+비동기 synchronous	//빨리끝나는 순서대로함
+
+
+스택 stack 나중에 한걸 먼저 쓴다. 후입선출 (LIFO)
+
+큐 queue	 선입선출 (FIFO)
