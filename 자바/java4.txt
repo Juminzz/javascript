@@ -1,0 +1,16 @@
+variable 
+1. boolean
+2. number
+3. string
+4. object
+5. undefined
+
+DOM(API)= Document Object Model (문서 객체 모델)
+
+반복문 (규칙성)
+1. 초기 
+2. 조건
+3. 증감
+
+hoisting(호이스팅) = 스크립트에 선언된 변수와
+함수를 메모리에 먼저 로드시키는 현상

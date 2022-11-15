@@ -7,6 +7,9 @@
     <title>타이머문제</title>
     <script src="./js16js/16-04.js"></script>
     <script>
+        (function(){
+            fn()
+            })();
         var count = 5
         var countDown 
     //     delay = setTimeout(() =>{
@@ -25,11 +28,11 @@
                     clearInterval(countDown)
                 }
             }
-            },1000)
-        }
-        fnx = function(){
-            state=!state
-        }
+        },1000)
+    }
+    function fnx(){
+        state=!state
+    }
     </script>
 </head>
 <body>

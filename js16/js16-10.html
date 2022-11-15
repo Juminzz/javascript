@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        선언적함수(); // hoisting
+        function 선언적함수(){
+        console.log(`1번째 선언적 함수입니다.`);    
+        }
+        function 선언적함수(){
+        console.log(`2번째 선언적 함수입니다.`);    
+    }
+
+    // console.log(foo1);
+    // let foo1 = 10; // let일 경우 hoisting 안됨, 오류가 난다.
+
+    // console.log(foo2);
+    // var foo2 = 20; // var일 경우 선언은 hoisting됨,할당은 hoisting 안됨, 오류안남
+
+    console.log(foo3); // 밑에 선언이 따로 없으면 let처럼 에러발생
+    foo3 = 30;
+    var foo3;   // 밑에 var 선언이 있을 경우 => hoisting이 됨
+    // let foo3;   // 밑에 let 선언이 있을 경우 => hoisting이 안됨
+    console.log(foo3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
