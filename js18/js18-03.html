@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>얕은복사, 깊은복사</title>
+</head>
+<body>
+    <script>
+        /* 얕은 복사 */
+        const 구름 = {
+            이름 : '구름',
+            나이 : 6,
+            종족 : '강아지'
+        }
+        // const 별 = 구름 // (이름 : '구름',나이 : 6, 종족 : '강아지')
+        // 별.이름 = '별' // '별'
+        // 별.나이 = 1 // 1
+        // 별 //  {이름: '별', 나이: 1, 종족: '강아지'}
+        // 구름 // {이름: '별', 나이: 1, 종족: '강아지'}
+
+
+        /* 깊은 복사 */
+        const 별똥 = {...구름} // 깊은 복사를 위해 전개연산자 사용
+        별똥.이름 = '별똥'
+        별똥.나이 = 3
+        // console.log(별똥)
+        // console.log(구름)
+
+        // /* JSON 형식 */
+        // console.log(JSON.stringify(별똥)) 
+        // console.log(JSON.stringify(별똥,null,2)) 
+        // console.log(JSON.stringify(구름))
+        // console.log(JSON.stringify(구름,null,4))
+        // // 2, 4 는 띄워쓰기
+
+        /* 깊은 복사 2 */
+        const 별똥JSON = JSON.stringify(별똥)
+        const 별똥JS = JSON.parse(별똥JSON)
+        
+        console.log(별똥JS)
+        console.log(별똥JSON)
+
+        // const 별똥new = JSON.parse(JSON.stringify(구름)) //단, (메소드가 없을 때)
+        // 별똥new.이름 = '별똥'
+        // 별똥new.나이 = 3
+        // console.log(별똥new)
+        // console.log(구름)
+    </script>
+</body>
+</html>

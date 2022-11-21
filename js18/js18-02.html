@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: '혼공JS',
+            price: '35000',
+            publisher: '한빛미디어'
+        }
+
+        // const {name,price} = obj
+        // name '혼공JS'
+        // price '35000'
+        // const {a= name, b =price} = obj // 앞에 부분이 선언되면 실행가능, 단독실행x
+        const {name:a ,price:b }= obj // 공식내용
+        console.log (a,b);
+    </script>
+</body>
+</html>

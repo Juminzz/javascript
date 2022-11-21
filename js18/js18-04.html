@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>화살표 함수를 사용한 메소드(p.252)</title>
+</head>
+<body>
+    <script>
+        const test = {
+            a: function (){
+                setTimeout(function(){
+                    console.log(this) // this는 부모중에 누구라는걸 가르킴
+                },1000)
+            },
+            b: function(){      // 화살표 함수는 잘 사용하지 않고 함수를 씀
+                setTimeout(()=>{
+                console.log(this)
+            },0)
+        },
+            누구 : '바로나'
+        }
+        test.a()
+        test.b()
+    </script>
+</body>
+</html>

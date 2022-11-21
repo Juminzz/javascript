@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        // const pet = {
+        //     name: "구름",
+        //     eat: function (food){
+        //         alert(this.name + '은/는' + food + '을/를 먹습니다.')
+        //     }
+        // }
+        // pet.eat('밥')
+
+
+        const pet = {
+            name: "구름",
+            eat(food){      // eat: function (food)를 줄여서 나온 구문
+                alert(this.name + '은/는' + food + '을/를 먹습니다.')
+            }
+        }
+        pet.eat('밥')
+    </script>
+</body>
+</html>

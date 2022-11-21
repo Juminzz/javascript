@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>호이스팅</title>
+</head>
+<body>
+    <script>
+        // fn()
+        // function fn(){
+        //     console.log ('나는 호이스팅 되있어');
+        // }
+
+        // function fn(){
+        //     console.log (bb);
+        // }
+        // let bb = '나는 호이스팅 되있어'
+        // fn()
+        
+
+        // function fn(){
+        //     let bb 
+        //     console.log (bb);
+        //     bb = '나는 호이스팅 되있어' 
+        // }
+        // fn()
+        // console.log(bb)
+
+        function fn(){
+            var bb
+            console.log (bb); 
+            bb= '나는 호이스팅 되있어' 
+        }
+        fn()
+        // console.log(bb)
+    </script>
+</body>
+</html>
