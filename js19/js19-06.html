@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>DOM  BOM</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded,()",()=>{
+
+    })
+</script>
+<body>
+    <h1>버튼으로 팝업띄우기</h1>
+    <button type="button" onclick="po()">팝업용 버튼</button>
+    <script>
+        function po(){
+            window.alert('팝업이 짠!!')     // BOM이다. window는 생략가능함
+            document.write('팝업이 짠됐대요')   // DOM
+        }
+    </script>
+</body>
+</html>

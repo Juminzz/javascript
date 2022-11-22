@@ -1,0 +1,6 @@
+DOM을 제일 많이 쓴다.
+
+html>body >table>tr>td{dsad} = 문서를 객체화 해서 
+만든 모델을 DOM이라고 한다.
+
+BOM 브라우저 개념

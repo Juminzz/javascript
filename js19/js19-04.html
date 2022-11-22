@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Lodash</title>
+    <script src="../js19/lodash.js"></script>
+</head>
+<body>
+    <script>
+        const users = [
+            { 'user': 'fred',   'age': 48 },
+            { 'user': 'barney', 'age': 36 },
+            { 'user': 'fred',   'age': 40 },
+            { 'user': 'barney', 'age': 34 }
+        ];  
+        const output = _.sortBy(users,['user','age']);
+        console.log(output); /*  
+            {user: 'barney', age: 34} 
+            {user: 'barney', age: 36}
+            {user: 'fred', age: 40} 
+            {user: 'fred', age: 48}
+            length : 4 */
+    </script>
+</body>
+</html>
