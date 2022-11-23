@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>textContent, innerHTML</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const header1 = document.querySelector('#a1');
+            const header2 = document.querySelector('#a2');
+            console.log(header1);
+            console.log(header2);
+            header1.textContent  ='<h1>이것은 textContent 내용입니다.</h1>';
+            header2.innerHTML = '<h1>이것은 innerHTML 내용입니다.</h1>';
+
+            // textContent는 <h1></h1> 까지 다나옴 속도도 빠르다 (최신문법)
+            // innerHTML은 적용해서 나온다.
+            // innerText는 사용안함 대신 textContent로 사용된다.
+        })
+    </script>
+</head>
+<body>
+    <h1 id="a1"></h1>
+    <h1 id="a2"></h1>
+</body>
+</html>

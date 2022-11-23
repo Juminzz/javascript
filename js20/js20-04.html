@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>setAttribute</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const rects = document.querySelectorAll(".rect1,.rect2,.rect3,.rect4,.rect5");
+
+            Array.from(rects).reduce((acc,cur,ind)=>{
+                const width = (0 *50+150)
+                const src = `http://placekitten.com/${width}/150`
+                cur.setAttribute('src',src)
+                // cur.src = src; // 위와 같은 방식인데 간단하게 쓰는 방식
+            },0)
+            // rects.style.display= 'inline-block';
+        })
+    </script>
+</head>
+<body>
+    <img src="" alt="" class="rect1">
+    <img src="" alt="" class="rect2">
+    <img src="" alt="" class="rect3">
+    <img src="" alt="" class="rect4">
+    <img src="" alt="" class="rect5">
+</body>
+</html>

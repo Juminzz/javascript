@@ -2,28 +2,33 @@
 <html lang="ko">
 <head>
     <title>Document</title>
-    <script>
+    <script> 
         // 문서가 다 읽고 스크립트 실행
+        // querySelector
         document.addEventListener('DOMContentLoaded',()=>{
             const list = text=>`<h1>${text}</h1>`
-            let a1_arr = document.querySelector('#a1') 
-            let a2_arr = document.querySelector('#a2') 
+        //     document.body.innerHTML += list('1번째 script 태그')
+        //     document.body.innerHTML += list('2번째 script 태그') + '<h1 id="a1"></h1>'
+        //     document.body.innerHTML += list('3번째 script 태그')  +'<h1 id="a2"></h1>'
+        //     const a1 = document.querySelector('#a1') 
+        //     a1.innerHTML= '1번째 HTML 태그'
+        //     const a2 = document.querySelector('#a2') 
+        //     a2.innerHTML= '2번째 HTML 태그'
+
+            // Array.form(aguments);
+
+            // querySelectorAll
             document.body.innerHTML += list('1번째 script 태그')
-            document.body.innerHTML += list('2번째 script 태그')
-            a1.innerHTML= '1번째 HTML 태그'
-            document.body.innerHTML += list('3번째 script 태그')
-            a2.innerHTML= '2번째 HTML 태그'
+            document.body.innerHTML += list('2번째 script 태그') + '<h1></h1>'
+            document.body.innerHTML += list('3번째 script 태그')  +'<h1></h1>'
+            const a1 = document.querySelectorAll('h1') 
+            a1[2].innerHTML= '1번째 HTML 태그';
+            a1[4].innerHTML= '2번째 HTML 태그';
         })
     </script>
 </head>
-<script>
-</script>
-<script>
-    // innerHTML 문서 안에 body안에 HTML 내용을 써라     
-    // document.body.innerHTML += list('1번째 script 태그') // body가 없어서 오류뜸
-</script>
+
+ 
 <body>
-    <h1 id="a1"></h1>
-    <h2 id="a2"></h2>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>자바스크립트 style</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const header = document.querySelector('h1');
+        // console.log(header) // h1을 잡음
+        header.textContent = 'HEADERS'
+        header.style.color = '#fff'
+        header.style.backgroundColor = '#000'
+        header.style.padding  = '10px'
+    })
+</script>
+<body>
+    <h1></h1>
+</body>
+</html>
