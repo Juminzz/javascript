@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const div1 = document.createElement('div'); // div1 생성
+            div1.setAttribute('class','d1');    // div1 class를 d1으로 설정
+            const h1 = document.createElement('h1'); // h1 생성
+            const div2 = document.createElement('div'); // div2 생성
+            const span = document.createElement('span'); // span 생성
+            div2.setAttribute('class','d2');  // div2 class를 d2으로 설정
+            h1.textContent = '저를 자바스크립트로 작성해 주세요.';
+            document.body.appendChild(div1); // body안에 div1 생성
+            document.body.appendChild(div2); // body안에 div2 생성
+            div1.appendChild(h1);    // div1안에 h1 생성
+            div2.appendChild(span); // div2안에 span 생성
+            span.textContent = '아주 감사합니다.';
+            span.style.color = 'blue';
+            span.setAttribute('id','s1'); // span id를 s1로 설정
+        })
+    </script>
+</head>
+<body>
+    <!-- div.d1>h1{저를 자바스크립트로 작성해주세요.}^div.d2>span.s1 
+    style color blue 아주 감사합니다-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>js로 그라데이션</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const divs = document.querySelectorAll("div");
+            divs.forEach((v,i)=>{
+                console.log (v,i)
+                const val = i *10
+                v.style.height = '10px'
+                v.style.backgroundColor = `rgba(${val},${val},${val})`
+            })
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

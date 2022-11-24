@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        let sec = 0;
+        let min = 0;
+            const header = document.querySelector('#a1');
+            header.innerHTML = `${min}분 ${sec}초`
+            function start(){
+                min==0&&sec==0?
+                st = setInterval(() => {
+                    sec++
+                    console.log(`${min}분 ${sec}초`);
+                    if (sec == 59){
+                        min+=1;
+                        sec=-1;
+                    }},1000):min=0,sec=0;
+                }
+                function end(){
+                    clearInterval(st);
+                }
+    </script>
+</head>
+<body>
+    <h1 id="a1"></h1>
+    <button onclick ="start()">시작</button>
+    <button onclick="end()">정지</button>
+    <button onclick="clicked()">초기화</button>
+</body>
+</html>

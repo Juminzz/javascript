@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>문서 객체 생성하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement('h1')    // h1적용돼서 굵어짐
+            h1.textContent = '문서 객체 동적으로 생성하기'
+            h1.setAttribute('id','a1')
+            h1.setAttribute('class','h1_a1')
+            h1.style.color = 'white'
+            h1.style.backgroundColor = 'black'
+            document.body.appendChild(h1)  // body에 붙인다.
+
+            const h2 = document.createElement('h2')   // h2 생성
+            const div = document.createElement('div')   // div 생성
+            h2.textContent = '나 여기있어요'  // 글자 생성
+            h2.style.backgroundColor = 'yellow'   // 노란색바탕으로 나옴
+            document.body.appendChild(div) // create 한걸 배치 시켜줌 div안에 넣음
+            div.appendChild(h2) // div안에 h2 배치
+        })
+
+        /*  setAttribute(속성) 
+            createElement 문서 객체 생성
+            appendChild 문서 객체 배치
+            textContent ''안에 내용을 다 출력
+             */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
