@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>예제</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement('h1');
+            const div1 = document.createElement('div');
+            const span1 = document.createElement('span');
+            const span2 = document.createElement('span');
+            const div3 = document.createElement('div');
+            const ul = document.createElement('ul');
+            const li1 = document.createElement('li');
+            const li2 = document.createElement('li');
+            const li3 = document.createElement('li');
+            const span3 = document.createElement('span');
+            const span4 = document.createElement('span');
+            const a1 = document.createElement('a'); // a 태그 생성
+            const a2 = document.createElement('a');
+            const br = document.createElement('br');
+            h1.textContent = '다음 html 형식을 js로 작성하시오';
+            document.body.appendChild(h1);
+            div1.setAttribute('class','c1');
+            span1.textContent = '1. 문서객체 생성하기';
+            span2.textContent = '그리고 추가하기';
+            document.body.appendChild(div1);
+            div1.appendChild(span1);
+            div1.appendChild(span2);
+            div3.setAttribute('class','c2');
+            li1.textContent = '생성하고';
+            li2.textContent = '추가하고';
+            li3.textContent = '문서읽고';
+            document.body.appendChild(div3);
+            div3.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            document.body.appendChild(span3);
+            document.body.appendChild(br);
+            document.body.appendChild(span4);
+            span3.appendChild(a1);
+            span4.appendChild(a2);
+            a1.textContent = '네이버링크';
+            a2.textContent = '다음링크';
+            a1.setAttribute('href','https://www.naver.com'); // a태그안에 href속성추가
+            a1.setAttribute('target','a_blank'); 
+            a2.setAttribute('href','https://www.daum.net');
+            a2.setAttribute('target','a_blank');
+        })
+        
+        /*      효율적인 방법
+            append(div1,div2,span1,br,span2) 옆으로 나란히 
+            div1.appendChild(span1) 
+            div1.appendChild(span2) */ 
+    </script>
+</head>
+<body>
+    <a href=""></a>
+</body>
+</html>

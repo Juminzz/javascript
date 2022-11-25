@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>신호등</title>
+        <script>
+            document.addEventListener("DOMContentLoaded",()=>{
+                // 초록 신호등
+            const div1 = document.createElement('div');
+            const div2 = document.createElement('div');
+            document.body.appendChild(div1);
+            div1.appendChild(div2);
+            div2.style.backgroundColor = 'green'
+            div2.setAttribute('id','circle1');
+            div2.style.width = '100px'
+            div2.style.height = '100px'
+            div2.style.borderRadius = '50%'
+            div2.style.visibility = 'hidden'
+            // div2.style.visibility = 'hidden'
+            const br1 = document.createElement('br')
+            document.body.appendChild(br1)
+            
+            // 노란 신호등
+            const div3 = document.createElement('div');
+            const div4 = document.createElement('div');
+            document.body.appendChild(div3);
+            div3.appendChild(div4);
+            div4.style.backgroundColor = 'yellow'
+            div4.setAttribute('id','circle2');
+            div4.style.width = '100px'
+            div4.style.height = '100px'
+            div4.style.borderRadius = '50%'
+            div4.style.visibility = 'hidden'
+            const br2 = document.createElement('br')
+            document.body.appendChild(br2)
+            
+            // 빨간 신호등
+            const div5 = document.createElement('div');
+            const div6 = document.createElement('div');
+            document.body.appendChild(div5);
+            div5.appendChild(div6);
+            div6.style.backgroundColor = 'red'
+            div6.setAttribute('id','circle3');
+            div6.style.width = '100px'
+            div6.style.height = '100px'
+            div6.style.borderRadius = '50%'
+            div6.style.visibility = 'hidden'
+            const br3 = document.createElement('br')
+            document.body.appendChild(br3)
+            
+            // 동작 버튼 만들기
+            const button = document.createElement('button')
+            button.innerHTML = '동작'
+            button.setAttribute ('onclick','clicked()');
+            document.body.appendChild(button);
+            
+        })
+        
+
+
+        function clicked(){
+                if (circle1){
+                    setTimeout(()=>{
+                        circle1.style.visibility = 'visible'
+                    },0)
+                    setInterval(()=>{
+                        circle1.style.visibility = 'hidden'
+                    },5000)
+                }
+                if (circle2){
+                    setTimeout(()=>{
+                        circle2.style.visibility = 'visible'
+                    },4999)
+                    setInterval(()=>{
+                        circle2.style.visibility = 'hidden'
+                    },2000)
+                }
+                if (circle3){
+                    setTimeout(()=>{
+                        circle3.style.visibility = 'visible'
+                    },6001)
+                    setInterval(()=>{
+                        circle3.style.visibility = 'hidden'
+                    },3000)
+                }
+        }
+        </script>
+</head>
+<body>
+    <!--   동작버튼을 누르면
+        신호등이
+        초록불 5초간 ->
+        노란불 2초 ->
+        빨간불 3초 ->
+        켜지면서 순회한다.
+        정지버튼을 누르면 멈춘다. -->
+    </body>
+</html>
