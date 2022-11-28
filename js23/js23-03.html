@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트 예제</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            let count = 0;
+            let a1 = 0;
+            const button1 = document.createElement ('button');
+            const button2 = document.createElement ('button');
+            const button3 = document.createElement ('button');
+            const div1 = document.createElement('div');
+            const h1 = document.createElement('h1');
+            document.body.append(button1,button2,button3,h1,div1);
+            button1.textContent = '동작'
+            button2.textContent = '해제'
+            button3.textContent = '잠금'
+            div1.append(h1);
+            h1.textContent = '안녕하세요. 반갑습니다'
+            h1.setAttribute ('id','a1');
+            h1.style.visibility = 'hidden'
+
+            // let id1 = (id2 = id3 = 0);
+            // const divs = document.body.querySelectorAll("div");
+            const t1 = () => {
+                id1 = setTimeout(() => {
+                    h1.style.visibility = "visible";
+                },3000);
+            };
+            const t2 = () =>{
+                id2 = setTimeout(()=>{
+                    h1.style.visibility = 'hidden';
+                },3000);
+            };
+            const t3 = () =>{
+                div1.removeEventListener('click',t1);
+            } 
+            const end = () => {
+                clearTimeout(id1);
+                clearTimeout(id2);
+                clearTimeout(id3);
+        };
+            document.body.append(button1,button2,button3);
+            button1.addEventListener("click", t1);
+            button2.addEventListener("click", t2);
+            button3.addEventListener("click", t3);
+            button3.addEventListener("click", end);
+        })
+        </script>
+</head>
+<body>
+       <!-- 동작 버튼을 누르면
+ 3초뒤 다음과 같은 글자가 나타난다.
+'안녕하세요. 반갑습니다.
+해제 버튼을 누르면
+3초뒤 다음 문구가 사라진다.
+'안녕하세요. 반갑습니다.
+잠금버튼을 누르면
+동작버튼과 해제버튼이 눌러지지 않는다.
+잠금버튼을 한번 더 누르면
+동작버튼과 해제버튼이 동작가능하다.
+현 상태를 나타내는 표현은 알아서 하시길... -->
+</body>
+</html>

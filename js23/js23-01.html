@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트 연결하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            let counter = 0;
+            const h1 = document.createElement('h1');
+            const h2 = document.createElement('h2');
+            document.body.append(h1);
+            document.body.append(h2);
+            h1.style.userSelect = 'none';
+            h1.textContent= `클릭 횟수 0`
+            // h1을 클릭했을 때
+            h1.addEventListener('click', (event)=>{
+                counter++
+                h1.textContent = `클릭 횟수 : ${counter}`
+            });
+
+            const div1 = document.createElement('div');
+            const div2 = document.createElement('div');
+            const button1 = document.createElement('button');
+            const button2 = document.createElement('button');
+            document.body.appendChild(div1);
+            document.body.appendChild(div2);
+            div1.appendChild(button1);
+            div2.appendChild(button2);
+            button1.setAttribute('id','connect');
+            button2.setAttribute('id','disconnect');
+            button1.innerHTML = '이벤트 연결'
+            button2.innerHTML = '이벤트 제거'
+
+            let listen = 0
+            connect.addEventListener(('click'),()=>{
+                if (listen==0){
+                    h2.addEventListener ('click',h1);
+                    h2.textContent = '이벤트 연결 상태 : 연결'
+                    listen = true
+                }
+            });
+            disconnect.addEventListener(('click'),()=>{
+                if(listen!==0){
+                    h2.removeEventListener(('click'),(h1));
+                    h2.textContent = '이벤트 연결 상태 : 해제'
+                    listen = false
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
