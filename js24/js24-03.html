@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>별 이동하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const star = document.createElement('h1');
+            document.body.appendChild(star);
+            star.innerHTML = '★';
+            star.style.position = 'absolute';
+
+            let [x,y] = [0,0];
+            const block = 20;
+            const print = _=>{
+                star.style.left = `${x*block}px`
+                star.style.top = `${y*block}px`
+            }
+            // print();  // 초기 위치
+
+            const keys = {ArrowLeft:37,ArrowUp:38,ArrowRight:39,ArrowDown:40}
+            const {ArrowLeft:Left,ArrowUp:Up,ArrowRight:Right,ArrowDown:Down} = keys
+            let check = 0;
+            document.body.addEventListener('keydown',(event)=>{
+                check = event.keyCode
+                if(Left===check){x -= 1}
+                if(Up===check){y -= 1}
+                if(Right===check){x += 1}
+                if(Down===check){y += 1}
+                print()
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

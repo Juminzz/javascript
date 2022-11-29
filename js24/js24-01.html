@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>글자 수 출력하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement('h1');
+            const textarea = document.createElement('textarea');
+            document.body.append(h1,textarea);
+            h1.textContent = `글자 수 : 0`
+
+            textarea.addEventListener('keyup',(event)=>{
+                const length = textarea.value.length
+                h1.textContent = `글자 수 : ${length}`
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
