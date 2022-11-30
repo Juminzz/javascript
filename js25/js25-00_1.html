@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>게임만들기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const star = document.createElement('h1')
+            document.body.appendChild(star)
+            star.style.position = 'absolute'
+            // star.innerHTML = '★'
+            
+
+
+            let status = true
+            setInterval(()=>{
+                if(status){
+                    star.innerHTML = '<img src="../자바/pac1.png">'
+                }else{
+                    star.innerHTML = '<img src="../자바/pac2.png">'
+                }
+                status = !status
+            },200)
+            
+            let [x,y]=[0,0]
+            const block = 20
+            const print =_=>{
+                star.style.left = `${x*block}px`
+                star.style.top = `${y*block}px`
+            }
+            print() // 초기위치0
+            const keys = {ArrowLeft:37,ArrowUp:38,ArrowRight:39,ArrowDown:40}
+            const {ArrowLeft:left,ArrowUp:up,ArrowDown:down,ArrowRight:right} = keys
+            let check = 0;
+            document.body.addEventListener('keydown',event=>{
+                check = event.keyCode
+                if(left===check){x -= 1;star.style.transform = 'scaleX(-1)'} // 좌우 대칭
+                if(up===check){y -= 1;star.style.transform = 'rotate(270deg)'}
+                if(right===check){x += 1;star.style.transform = 'scaleX(1)'}
+                if(down===check){y += 1;;star.style.transform = 'rotate(90deg)'}
+                print()
+            })
+        })
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

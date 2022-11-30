@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- https://getbootstrap.kr/ 부트스트랩 주소 -->
+    <title>달러 환율 계산기(신) 버튼타입</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.getElementById('doll');
+            const button = document.getElementById('b1');
+            const p = document.getElementsByTagName('p');
+            document.body.append(input,'달러');
+            // button.innerHTML = '계산'
+            
+            const won = 1313
+            button.addEventListener("click",()=>{
+                const dollar = input.value *1
+                if(isNaN(dollar)){  // 숫자가 아닐때
+                    p.textContent = '숫자만 입력하세요'
+                    return; // 밑에거 출력안함 조기종료
+                }
+                sum = dollar *won
+                p.textContent = sum.toLocaleString("ko-KR") +'원'
+            });
+        })
+    </script>
+</head>
+<body>
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">기능</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">단위계산</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">환율</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">꾸미기</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    <input type="text" id="doll"> 달러
+    <button id="b1" type="button" class="btn btn-info">계산하기</button>
+    <p></p>
+</body>
+</html>
