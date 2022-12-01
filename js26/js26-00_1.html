@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>css 스타일 확인</title>
+</head>
+<body>
+    <h1 style="font-weight: bold;text-align: center;">CssText의 속성 알아보기</h1>
+    <button>넣기 버튼</button>
+    <button>반환 버튼</button>
+    <p></p>
+    <script>
+        let h1 = document.querySelector('h1');
+        let p = document.querySelector('p');
+        let button = document.querySelectorAll('button');
+
+        button[0].addEventListener('click',()=>{
+            h1.style.cssText = "color : #32a4a4;font-size: 2em;text-decoration: underline;"
+        });
+        button[1].addEventListener('click',()=>{
+            p.innerHTML = h1.style.cssText
+    });
+    </script>
+</body>
+</html>

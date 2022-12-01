@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <style>
+        select:hover{
+            background-color: rgb(242, 188, 113);
+        } 
+        p{
+            margin-top: 120px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const select = document.createElement('select');
+            document.body.append(select);
+
+            const opt = ['떡볶이','순대','오뎅','튀김','김밥','라면'];
+            for (let i=0;i<opt.length;i++){
+                let option = document.createElement('option');
+                option.textContent = opt[i]
+                select.appendChild(option);
+            } 
+            const p = document.createElement('p');
+            document.body.append(p);
+            p.innerHTML = "선택 : 떡볶이"
+
+            select.addEventListener('change',(event)=>{
+                const ok = event.currentTarget.value
+                p.innerHTML = `선택 : `+ ok
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

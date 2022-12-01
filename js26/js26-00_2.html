@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>CssText</title>
+</head>
+<body>
+    <h1>CssText</h1>
+    <button>버튼1</button><br><br>
+    <button>버튼2</button><br><br>
+    <button>버튼3</button><br><br>
+    <button>초기화</button><br><br>
+    <button>스타일값</button>
+    <p></p>
+
+    <script>
+        let h1 = document.querySelector('h1');
+        let p = document.querySelector('p');
+        let button = document.querySelectorAll('button');
+
+        button[0].addEventListener('click',()=>{
+            h1.style.cssText = 'color: green; font-size: 1em;';
+        });
+        button[1].addEventListener('click',()=>{
+            h1.style.cssText = 'color: red; font-size: 2em; text-align:center;';
+        });
+        button[2].addEventListener('click',()=>{
+            h1.style.cssText = 'color: blue; font-size: 1.5em;';
+        });
+        button[3].addEventListener('click',()=>{
+            h1.style.cssText = 'color: black; font-size: 2rem;';
+        });
+        button[4].addEventListener('click',()=>{
+            p.style.cssText = 'text-align:center;background-color: #000;color: #fff;';
+            p.innerHTML = h1.style.cssText;
+        });
+    </script>
+</body>
+</html>
+<!-- 버튼1 : 초록 크기 1em
+버튼2 : 빨간 가운데 정렬 2em
+버튼3 : 밑줄 1.5em 파랑
+초기화 버튼
+스타일 값 알아내는 버튼
+
+각각 스타일 값 넣어주는 버튼과
+초기화와 그 값을 알아내는 버튼 등으로 구성하라 -->

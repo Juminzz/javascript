@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>멀티 select</title>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const select = document.createElement('select');
+            const option = document.createElement('option');
+            const op1 = document.createElement('option');
+            const op2 = document.createElement('option');
+            const op3 = document.createElement('option');
+            const op4 = document.createElement('option');
+            select.setAttribute('multiple','');
+            const p = document.createElement('p');
+            document.body.append(select,p);
+            // select.append(option);
+            select.multiple =true;
+            const opt = ['떡볶이','순대','오뎅','튀김'];
+            select.append(op1,op2,op3,op4);
+            op1.append(opt[0]);
+            op2.append(opt[1]);
+            op3.append(opt[2]);
+            op4.append(opt[3]);
+            
+            
+            select.addEventListener('change',(event)=>{
+                const options = event.currentTarget.options
+                const list = [op1,op2,op3,op4];
+                for (const option of options) {
+                    if(option.selected){
+                        list.push(option.textContent);
+                    }
+                }
+                p.textContent = `선택 : ${list.join(',')}`
+            });
+        });
+    </script>
+    <style>
+        select{
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <select multiple>
+    <option value="1">떡볶이</option>
+    <option value="2">순대</option>
+    <option value="3">오뎅</option>
+    <option value="4">튀김</option>
+    </select> -->
+</body>
+</html>
