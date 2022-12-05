@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>체크박스 활용 풀이</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.createElement("input");
+            const button = document.createElement("button");
+            const span = document.createElement("span");
+            const h1 = document.createElement("h1");
+            document.body.append(input,span,h1,button);
+            input.setAttribute('type','checkbox');
+            span.append('타이머활성화');
+            button.append('초기화');
+            h1.innerHTML = '0초';
+            let [t1,t2] = [0,0]
+            input.addEventListener('change',(event)=>{
+                if(event.currentTarget.checked){
+                    t2 = setInterval(() => {
+                        t1 += 1;
+                        h1.textContent = `${t1}초`
+                    },1000);
+                }else{
+                    clearInterval(t2);
+                }
+            })
+            button.addEventListener('change',(event)=>{
+                alert('d')
+            });
+        })
+        // input.checked = false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

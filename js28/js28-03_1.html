@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>체크박스 활용</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.createElement("input");
+            const span = document.createElement("span");
+            const h1 = document.createElement("h1");
+            document.body.append(input,span,h1);
+            input.setAttribute('type','checkbox');
+            span.textContent = ' 타이머 활성화'
+            let [timer, timerId] = [0,0];
+
+            input.addEventListener('change',(event)=>{
+                if(event.currentTarget.checked){
+                    timerId = setInterval(()=>{
+                        timer += 1
+                        h1.textContent = `${timer}초`
+                    },1000);
+                }else{
+                    clearInterval(timerId);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
