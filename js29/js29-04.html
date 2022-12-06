@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>할일 목록 만들기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement("h1");
+            const input = document.createElement("input");
+            const addbutton = document.createElement("button");
+            const div = document.createElement("div");
+            document.body.append(h1,input,addbutton,div);
+            input.setAttribute('id','todo');
+            addbutton.setAttribute('id','addButton');
+            div.setAttribute('id','todo-list');
+            h1.innerHTML = '할 일 목록'
+            addbutton.innerHTML = '추가하기'
+            
+            let text = [input.value];
+            addbutton.addEventListener('click',(event)=>{
+                const check = document.createElement('input');
+                const br = document.createElement('br');
+                const span = document.createElement('span')
+                const dele = document.createElement("button");
+                const item = document.createElement("div");
+                text.forEach((v,i)=>{
+                    span.textContent = input.value
+                    check.setAttribute('type', 'checkbox');
+
+                    div.append(item);
+                    item.append(check,span,dele,br);
+                    dele.innerHTML = '제거하기'
+                });
+
+                // 체크박스 체크 시 선 그음
+                check.addEventListener('change',(event)=>{
+                    span.style.textDecoration = event.target.checked ? 'line-through' : '';
+                    
+
+                // 체크를 해야 제거가 됨
+                    dele.addEventListener('click',(event)=>{
+                        span.textContent = check.value = ''
+                        div.removeChild(item) // 큰 div안에 작은 div(item)제거
+                    });
+                }); 
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

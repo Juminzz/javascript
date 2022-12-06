@@ -24,11 +24,15 @@
                     clearInterval(t2);
                 }
             })
-            button.addEventListener('change',(event)=>{
-                alert('d')
+
+            // 버튼 초기화
+            button.addEventListener('click',(event)=>{
+                clearInterval(t2);
+                t1 = 0
+                h1.innerHTML = t1+ '초' 
+                input.checked = false   // 초기화누르면 체크가 풀림
             });
         })
-        // input.checked = false
     </script>
 </head>
 <body>

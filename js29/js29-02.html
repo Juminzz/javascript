@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이미지 우클릭 막기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            // const imgs = document.createElement('img');
+            // imgs.setAttribute('src','http://placekitten.com/300/300');
+            // imgs.setAttribute('alt','고양이');
+            // document.body.append(imgs);
+            const imgs = document.querySelector('img');
+
+            imgs.forEach((img)=>{
+                img.addEventListener('contextmenu',(event)=>{
+                    event.preventDefault()
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <img src="http://placekitten.com/300/300" alt="고양이">
+</body>
+</html>

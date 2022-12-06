@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>타이핑 효과</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <style>
+        /* h1{
+            --ti-cursor-margin-left: 0.1em;
+            --ti-cursor-color: rgb(80, 95, 235);
+            color : rgb(89, 215, 249);
+        } */
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement("h1");
+            document.body.appendChild(h1);
+
+            h1.style.cssText = ' --ti-cursor-margin-left: 0.1em; --ti-cursor-color: rgb(80, 95, 235);color : rgb(89, 215, 249);'
+
+            // h1.textContent = 'JavaScript is my favorite programming language'
+            h1.textContent = '반갑습니다 감사합니다.'
+            new TypeIt(h1)
+            .pause(1000)
+            .delete(6,{delay: 1000})   // 마지막 부터 32번째 까지 다 지움
+            .type('고맙습니다!')   // 새로 타이밍함
+            .go() // 마지막은 .go()
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

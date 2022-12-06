@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>라디오 버튼 예제</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const aa = ['강아지','고양이','햄스터','기니피그','판다','여우']
+            const h3 = document.createElement("h3");
+            const hr = document.createElement("hr");
+            document.body.append(h3);
+            h3.innerHTML = '# 좋아하는 애완동물을 선택해주세요'
+            
+            aa.forEach((v,i)=>{
+                let input1 = document.createElement('input'); // input 추가
+                const span = document.createElement("span");  // span 추가
+                input1.setAttribute('type', 'radio');   // input 속성 tyop에 radio
+                input1.setAttribute('name', 'pet'); // name은 pet으로 생성
+                input1.setAttribute('value', aa[i]); // input value 값 aa배열의 개수대로
+                document.body.append(input1);
+                span.innerHTML = aa[i];  // span에 aa배열 개수마다 생성
+                document.body.append(span);
+
+                input1.addEventListener('change',()=>{
+                    const current = event.currentTarget
+                    if(current.checked){
+                        output.textContent = `좋아하는 애완동물은 ${current.value} 입니다.`
+                    }
+                });
+            })
+            // span.innerHTML = '기타'
+            document.body.append(hr)
+            const h33 = document.createElement("h3");
+            document.body.append(h33);
+            h33.setAttribute('id','output')
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
