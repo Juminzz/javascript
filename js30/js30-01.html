@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement("h1");
+            const text = document.createElement("textarea");
+            document.body.append(h1,text);
+            let timer
+
+            text.addEventListener('focus',(event)=>{
+                timer = setInterval(() => {
+                    const length = text.value.length
+                    h1.textContent = `글자수 ${length}`
+                }, 50);
+            });
+            text.addEventListener('blur',(event)=>{
+                clearInterval(timer)
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Nullish coalescing operator</title>
+    <script>
+        function pt(text){
+            const pr = text ?? 0  // '값이 없어요. null이거나 undefined 겠네요.'
+            console.log(pr) //pt(null) = 값이 없어요. null이거나 undefined 겠네요.
+        }
+        function ppt(text= 0){
+            const pr = text  
+            console.log(pr) 
+            //ppt(null) = null
+            //ppt(undefined) =  0
+        }
+        function ptt(text){
+            const pr = text || '값이 없대요.'
+            console.log(pr) 
+        }
+        function pptt(text){
+            const pr = text?.split(',')  
+            console.log(pr) 
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

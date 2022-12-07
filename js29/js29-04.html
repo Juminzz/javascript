@@ -22,14 +22,14 @@
                 const span = document.createElement('span')
                 const dele = document.createElement("button");
                 const item = document.createElement("div");
-                text.forEach((v,i)=>{
-                    span.textContent = input.value
-                    check.setAttribute('type', 'checkbox');
 
-                    div.append(item);
-                    item.append(check,span,dele,br);
-                    dele.innerHTML = '제거하기'
-                });
+                span.textContent = input.value
+                check.setAttribute('type', 'checkbox');
+
+                div.append(item);
+                item.append(check,span,dele,br);
+                dele.innerHTML = '제거하기'
+                
 
                 // 체크박스 체크 시 선 그음
                 check.addEventListener('change',(event)=>{
