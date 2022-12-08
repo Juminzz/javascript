@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>나의 TODO LIST</title>
+    <style>
+        button{
+            margin: 5px;
+        }
+       #s1{
+            display: flex;
+            justify-content: end;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.createElement("input")
+            const all = document.createElement("input")
+            const aspan = document.createElement("aspan")
+            const alldel = document.createElement("a")
+            const br = document.createElement("br")
+            const add = document.createElement('button');
+            const h1 = document.createElement('h1');
+            const p2 = document.createElement('p');
+            const div0 = document.createElement('div');
+            document.body.append(h1,input,add,br,all,aspan,alldel,div0,p2);
+            add.textContent = '+'
+            aspan.textContent = ' 전체선택'
+            alldel.textContent = ' 전체삭제'
+            all.setAttribute('type', 'checkbox');
+            alldel.setAttribute('id','s1');
+            alldel.setAttribute('href','#');
+            h1.textContent = 'TODO LIST'
+            div0.setAttribute('class','ch');
+
+            let text = [input.value];
+            add.addEventListener('click',(event)=>{
+                const div1 = document.createElement('div');
+                const check = document.createElement('input');
+                const span = document.createElement('span');
+                const del = document.createElement('button');
+                div0.append(div1);
+                div1.append(check,span,del);
+                span.textContent = input.value
+                del.textContent = '삭제'
+                check.setAttribute('type', 'checkbox');
+                check.setAttribute('id', 'checkAll');
+
+                check.addEventListener('change',(event)=>{
+                    span.style.textDecoration = event.target.checked ? 'line-through' : '';
+
+                    // 체크를 해야 삭제됨
+                    del.addEventListener('click',()=>{
+                        span.textContent = check.value = '';
+                        div0.removeChild(div1);
+                    });
+                })
+
+                all.addEventListener('click',(event)=>{
+                    
+                });
+                
+            });
+            });
+    </script>
+</head>
+<body>
+    <!-- //전체선택시 전체선택/ 다시 누르면 전체 해제
+                document.getElementById("checkAll").onclick = function () {
+                    if (checkAll.checked) {
+                        for (var i = 0; i < categories.length; i++) {
+                                categories[i].checked = true; 
+                        }
+                    }else {
+                        for (var i = 0; i < categories.length; i++) {
+                            categories[i].checked = false;
+                        }
+                    }
+                } -->
+</body>
+</html>

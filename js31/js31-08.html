@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>try catch 상황4</title>
+</head>
+<body>
+    <script>
+        function fn2(){
+            console.log('fn2의 시작');
+            // throw '고의적 에러 !'
+            throw new Error('고의로 낸 에러');
+            console.log('fn2의 끝');
+        }
+        function fn1(){
+            console.log('fn1의 시작');
+            try{
+                fn2()
+            }catch(e){
+                console.log(e);
+            }
+            console.log('fn1의 끝');
+        }
+        console.log('=====프로그램의 시작=====');
+        fn1()
+        console.log('=====프로그램의 끝=====');
+    </script>
+</body>
+</html>

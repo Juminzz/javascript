@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>try catch 상황2</title>
+</head>
+<body>
+    <script>
+        try{
+            console.log('try 블록이 시작됨');
+            if(confirm('에러를 발생 시킬까요?'))what()
+        }
+        catch(e){
+            console.log('catch 에러를 잡음'+e);
+        }
+        finally{
+            console.log('finally 연산 끝까지 종료됨');
+        }
+
+        // 확인 누르면 결과
+        // try 블록이 시작됨
+        // js31-06.html:13 catch 에러를 잡음ReferenceError: what is not defined
+        // js31-06.html:16 finally 연산 끝까지 종료됨
+
+
+        // 취소 누르면 결과
+        // try 블록이 시작됨
+        // js31-06.html:16 finally 연산 끝까지 종료됨
+    </script>
+</body>
+</html>
