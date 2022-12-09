@@ -2,21 +2,53 @@
 <html lang="ko">
 <head>
     <title>나의 TODO LIST</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+        body{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
         button{
-            margin: 5px;
+            margin: 10px;
         }
        #s1{
             display: flex;
-            justify-content: end;
+            justify-content: center;
             text-decoration: none;
+        }
+        /* h1{
+            display: flex;
+            justify-content: center;
+        } */
+        .in:focus{
+            background-color: rgb(189, 245, 187);
+        }
+        .in:hover{
+            background-color: rgb(101, 238, 43);
+        }
+        .btn{
+            margin-left: 30px;
+        }
+        .sp{
+            margin-left: 20px;
+            font-size: 17px;
+        }
+        .d1{
+            background-color: rgb(203, 227, 204);
+            width: 300px;
+            height: 55px;
+            margin-bottom: 10px;
+        }
+        #checkAll{
+            margin-left: 15px;
         }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded",()=>{
             const input = document.createElement("input")
             const all = document.createElement("input")
-            const aspan = document.createElement("aspan")
+            const aspan = document.createElement("span")
             const alldel = document.createElement("a")
             const br = document.createElement("br")
             const add = document.createElement('button');
@@ -25,57 +57,102 @@
             const div0 = document.createElement('div');
             document.body.append(h1,input,add,br,all,aspan,alldel,div0,p2);
             add.textContent = '+'
+            add.setAttribute('class','btn btn-outline-success');
             aspan.textContent = ' 전체선택'
             alldel.textContent = ' 전체삭제'
             all.setAttribute('type', 'checkbox');
+            all.setAttribute('id', 'all');
+            all.setAttribute('onclick', 'itemAllChk()');
             alldel.setAttribute('id','s1');
             alldel.setAttribute('href','#');
             h1.textContent = 'TODO LIST'
             div0.setAttribute('class','ch');
+            input.setAttribute('placeholder','Write Todo List');
+            input.setAttribute('class','in')
 
-            let text = [input.value];
-            add.addEventListener('click',(event)=>{
+            const lo = localStorage.getItem('local')
+            let vin = ''
+            let arr = []
+            input.addEventListener('keyup',(e)=>{
+                vin = e.currentTarget.value
+                // console.log(vin)
+                if(e.keyCode==13){
+                    iadd()
+        }
+    })  
+    let text = [input.value];
+    add.addEventListener('click',iadd)
+    function iadd(){
+            if(vin){
+                arr.push(vin)
+                input.value = vin
+                // console.log(arr)
                 const div1 = document.createElement('div');
                 const check = document.createElement('input');
                 const span = document.createElement('span');
                 const del = document.createElement('button');
                 div0.append(div1);
                 div1.append(check,span,del);
+                div1.setAttribute('class','d1');
                 span.textContent = input.value
+                span.setAttribute('class','sp');
+                del.setAttribute('class','btn btn-outline-info');
+                del.setAttribute('id','del')
                 del.textContent = '삭제'
+                vin=''
+                input.value = vin // 엔터나 추가 눌렀을때 쳤던거 없앰
                 check.setAttribute('type', 'checkbox');
                 check.setAttribute('id', 'checkAll');
-
+                check.setAttribute('name', 'item');
+                localStorage.setItem('local',arr) 
+                    
                 check.addEventListener('change',(event)=>{
                     span.style.textDecoration = event.target.checked ? 'line-through' : '';
+                    // localStorage.setItem('local','저장')
 
+                    
                     // 체크를 해야 삭제됨
-                    del.addEventListener('click',()=>{
+                    del.addEventListener('click',(event)=>{
+                        all.checked = false;
                         span.textContent = check.value = '';
                         div0.removeChild(div1);
                     });
                 })
-
-                all.addEventListener('click',(event)=>{
                     
+                // 전체선택, 전체삭제 이벤트
+                all.addEventListener('change',(event)=>{
+                    Cvalue = event.currentTarget.checked;
+                    if(check.checked){
+                        alldel.addEventListener('click',()=>{
+                            div0.removeChild(div1)
+                        })
+                    }
+                })
+
+                // 전체삭제 누르면 전체선택 체크박스 풀림
+                alldel.addEventListener('click',(event)=>{
+                    all.checked = false 
                 });
-                
-            });
-            });
-    </script>
+            }
+        }    
+    });
+
+    // 전체선택 / 전체해제 
+    function itemAllChk(){
+        if(document.getElementById('all').checked){
+            var obj = document.getElementsByName('item');
+            for(let i=0;i<obj.length;i++){
+                obj[i].checked = true;
+            }
+        }else{
+            var obj = document.getElementsByName('item')
+            for(let i=0;i<obj.length;i++){
+                obj[i].checked = false;
+            }
+        }
+    }
+        </script>
 </head>
 <body>
-    <!-- //전체선택시 전체선택/ 다시 누르면 전체 해제
-                document.getElementById("checkAll").onclick = function () {
-                    if (checkAll.checked) {
-                        for (var i = 0; i < categories.length; i++) {
-                                categories[i].checked = true; 
-                        }
-                    }else {
-                        for (var i = 0; i < categories.length; i++) {
-                            categories[i].checked = false;
-                        }
-                    }
-                } -->
 </body>
 </html>
