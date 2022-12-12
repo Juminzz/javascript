@@ -42,6 +42,7 @@
         }
         #checkAll{
             margin-left: 15px;
+            margin-right: 10px;
         }
     </style>
     <script>
@@ -69,23 +70,41 @@
             div0.setAttribute('class','ch');
             input.setAttribute('placeholder','Write Todo List');
             input.setAttribute('class','in')
+            let id = 0
 
-            const lo = localStorage.getItem('local')
+            
             let vin = ''
             let arr = []
+            loader()
             input.addEventListener('keyup',(e)=>{
                 vin = e.currentTarget.value
                 // console.log(vin)
                 if(e.keyCode==13){
                     iadd()
-        }
-    })  
-    let text = [input.value];
+                }
+            })  
+            let text = [input.value];
+            
+        function loader(){
+        lo = localStorage.getItem('local')?? ''
+
+        arr = lo.split(',') 
+
+        arr.forEach(v=>{
+            list(v)
+        })             
+    }
+
     add.addEventListener('click',iadd)
     function iadd(){
-            if(vin){
-                arr.push(vin)
-                input.value = vin
+        list(vin)
+        localStorage.setItem('local',arr) ;
+    }
+    function list(sp){
+            if(sp){
+                id++
+                arr.push(sp)
+                input.value = sp
                 // console.log(arr)
                 const div1 = document.createElement('div');
                 const check = document.createElement('input');
@@ -95,22 +114,19 @@
                 div1.append(check,span,del);
                 div1.setAttribute('class','d1');
                 span.textContent = input.value
-                span.setAttribute('class','sp');
+                span.setAttribute('class',sp);
                 del.setAttribute('class','btn btn-outline-info');
-                del.setAttribute('id','del')
+                del.setAttribute('id',id)
                 del.textContent = '삭제'
                 vin=''
                 input.value = vin // 엔터나 추가 눌렀을때 쳤던거 없앰
                 check.setAttribute('type', 'checkbox');
                 check.setAttribute('id', 'checkAll');
                 check.setAttribute('name', 'item');
-                localStorage.setItem('local',arr) 
-                    
+                
                 check.addEventListener('change',(event)=>{
-                    span.style.textDecoration = event.target.checked ? 'line-through' : '';
-                    // localStorage.setItem('local','저장')
-
-                    
+                    span.style.textDecoration = event.target.checked ? 'line-through' : '';        
+                    localStorage.setItem('local',arr) ;
                     // 체크를 해야 삭제됨
                     del.addEventListener('click',(event)=>{
                         all.checked = false;
@@ -118,13 +134,14 @@
                         div0.removeChild(div1);
                     });
                 })
-                    
+                
                 // 전체선택, 전체삭제 이벤트
                 all.addEventListener('change',(event)=>{
-                    Cvalue = event.currentTarget.checked;
+                    span.style.textDecoration = event.target.checked ? 'line-through' : '';
                     if(check.checked){
                         alldel.addEventListener('click',()=>{
                             div0.removeChild(div1)
+                            localStorage.clear('local') 
                         })
                     }
                 })
@@ -132,6 +149,11 @@
                 // 전체삭제 누르면 전체선택 체크박스 풀림
                 alldel.addEventListener('click',(event)=>{
                     all.checked = false 
+                    arr =[]
+                    del.addEventListener('click',()=>{
+                        all.checked = false;
+                        span.textContent = check.value = '';
+                    })
                 });
             }
         }    
@@ -151,7 +173,7 @@
             }
         }
     }
-        </script>
+    </script>
 </head>
 <body>
 </body>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>To do List 풀이</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;400;500;700&family=Poor+Story&display=swap');
+    :root{
+        --bkcolor0: rgb(217, 247, 230);
+        --bkcolor1: rgb(172, 248, 205);
+        --bkcolor2: rgb(123, 208, 160);
+        --bcolor0: rgb(186, 226, 242);
+        --bcolor1: rgb(141, 195, 236);
+        --bcolor2: rgb(171, 169, 169);
+        --bcolor3: rgb(67, 145, 176);
+        --bcolor4: rgb(251, 252, 183);
+        --bcolor5: rgb(231, 235, 176);
+        --bcolor6: rgb(233, 239, 148);
+        --bcolor7: rgb(232, 241, 99);
+    }
+        body,button,input{
+            font-family: 'Poor Story', cursive;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            padding: 30px;
+            border-radius: 20px;
+            background-color: var(--bkcolor0);
+            height: auto;
+            width: 100%;
+            max-width: 25rem; 
+
+        }
+        h1{
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+        .input-set{
+            height: 40px;
+            margin-bottom: 7px;
+        }
+        #new-input{
+            font-size: 1em;
+            font-weight: bold;
+            margin: 0px;
+            padding: 5px;
+            width: 75%;
+            height: 100%;
+            border-radius: 20px 0 0 20px;
+            display: inline;
+            box-sizing: border-box;
+            border: 1px solid rgba(0,0,0,0.5);
+        }
+        #new-add{
+            font-size: 1em;
+            margin-left: -5px;
+            width: 25%;
+            height: 100%;
+            padding: 5px;
+            border-radius: 0 20px 20px 0;
+            display: inline;
+            box-sizing: border-box;
+            border: 1px solid rgba(0,0,0,0.5);
+            background-color: var(--bkcolor1);
+        }
+        button{
+            margin: 3px;
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: var(--bcolor4);
+            border: 1px solid rgba(0,0,0,0.5);
+            color: var(--bcolor3);
+            font-size: 1em;
+            font-weight: bold;
+        }
+        button:hover{
+            margin: 3px;
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: var(--bcolor2);
+            border: 1px solid rgba(0,0,0,0.5);
+            color: var(--bcolor3);
+            font-size: 1em;
+            color: #fff;
+            font-weight: bold;
+        }
+        h2{
+            margin: 0;
+            /* overflow: hidden; */
+            white-space: normal;  /*영어 안깨지도록 하는거 */
+            word-wrap: break-word; 
+        }
+        .list-card{
+            transition: 1s ease;
+            background-color: var(--bcolor1);
+            border-radius: 10px;
+            color: #fff;
+            max-width: 85%;
+            height: 45px;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            overflow: hidden;
+            /* white-space: normal; */
+            /* word-wrap: break-word; */
+        }
+        .list-card:hover{
+            background-color: var(--bcolor1);
+            transition: 1s ease;
+            border-radius: 10px;
+            color: #fff;
+            max-width: 100%;
+            height: auto;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            overflow: hidden;
+            /* white-space: normal; */
+            /* word-wrap: break-word; */
+        }
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const type = document.querySelector('h1');
+        new TypeIt(type,{speed:50}).pause(500).move(-10).type('나의 ').go()
+    });
+</script>
+</head>
+<body>
+    <!-- div.container>div.main>h1+div>input#new-input+input#new-add^button#sel-del+button#all-del^div#list -->
+    <div class="container">
+        <div class="main">
+            <h1>To Do List</h1>
+            <div class="input-set">
+                <input type="text" id="new-input">
+                <input type="button" id="new-add" value="할일추가">
+            </div>
+                <button id="sel-del">완료제거</button>
+                <button id="all-del">모두제거</button>
+                <hr>
+                <div id="list"></div>
+                <!-- div.list-card>span{체크}+input+button{삭제}+h2{안녕하세요} -->
+                <div class="list-card">
+                    <span>체크</span>
+                    <input type="checkbox">
+                    <!-- <button>삭제</button> -->
+                    <h2>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</h2>
+                </div>
+                <div class="list-card">
+                    <span>체크</span>
+                    <input type="checkbox">
+                    <!-- <button>삭제</button> -->
+                    <h2>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
