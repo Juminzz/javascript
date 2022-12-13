@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>클래스의 고급기능 (클래스상속)</title>
+</head>
+<body>
+    <script>
+        class Rectangle{
+            constructor(width,height){
+                this.width = width
+                this.height = height
+            }
+            getP(){
+                return (this.width+this.height)*2;
+            }
+            getA(){
+                return this.width*this.height;
+            }
+        }
+        // extends = 상속 부모(Rectangle)
+        // super는 Rectangle 값을 땡겨온다.
+        class Square extends Rectangle{
+            constructor(length){ // super의 각각 length에다가 넣어줌
+                super(length,length); // constructor(width,height)에서 가져옴
+            }
+        }
+        const square = new Square(10);
+        console.log('둘레1 :'+square.getP(),'면적1 :'+square.getA())
+        const square2 = new Square(20);
+        console.log('둘레2 :'+square2.getP(),'면적2 :'+square2.getA())
+        const rec = new Rectangle(10,20);
+        console.log('둘레3 :'+rec.getP(),'면적3 :'+rec.getA())
+    </script>
+</body>
+</html>

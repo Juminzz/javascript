@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const User = function (name, age){
+            let that = {}  // 객체를 초기화
+            that.name = name
+            that.age = age
+            that.show = function (){
+                console.log(name+' 그리고 '+age)
+            }
+            return that
+        }
+    </script>
+</body>
+</html>

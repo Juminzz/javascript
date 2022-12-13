@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>클래스의 고급기능(get,set키워드2)</title>
+</head>
+<body>
+    <script>
+        class User{
+            #name;
+            constructor(name){
+                this.name = name;
+            }
+            // 읽기 전용
+            get name(){
+                return this.#name; // 내부에서 적용하겠다. 외부 x
+            }
+            // 쓰기 전용 (값 넣을수 있음)
+            set name(value){
+                if (value.length<4){ // 값이 4보다 작을때 실행
+                    console.log ('값이 너무 짧아요');
+                    return
+                }
+                this.#name = value; // 내부에 있는 값을 넣음
+            }
+        }
+    </script>
+</body>
+</html>

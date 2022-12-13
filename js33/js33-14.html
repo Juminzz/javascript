@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>클래스의 고급기능(get,set키워드1)</title>
+</head>
+<body>
+    <script>
+        class Square{
+            #length
+
+            constructor(length){
+                this.length = length;
+            }
+            // get 읽기 전용
+            get length(){
+                return this.#length;
+            }
+            get perimeter(){
+                return this.#length *4
+            }
+            get area(){
+                return this.#length * this.#length
+            }
+
+            // set 쓰기 전용
+            // #length를 수정 가능한 매개변수
+            set length(length){
+                if(length <= 0){
+                    throw '길이는 0보다 커야 합니다.'
+                }
+                this.#length = length  // #length 쓰기 가능하게 함 (값을 넣음)
+            }
+
+        }
+        const squareA = new Square(10)
+        console.log(`한 변의 길이 : ${squareA.length}`) // 메소드 형태로 호출하지않음. 속성상태로 호출함
+        console.log(`둘레 : ${squareA.perimeter}`)
+        console.log(`한 변의 길이 : ${squareA.area}`)
+
+        const squareB = new Square(-10)
+    </script>
+</body>
+</html>

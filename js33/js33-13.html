@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>클래스의 고급기능 (private 속성1)</title>
+</head>
+<body>
+    <script>
+        class Square{
+            #length
+            constructor(length){ // super의 각각 length에다가 넣어줌
+                if(length<=0){throw '길이는 0보다 커야합니다'} // 0보다 작으면 오류 발생
+                this.#length = length;
+            }
+            getP(){
+                return this.#length*4;
+            }
+            getA(){
+                return this.#length * this.#length;
+            }
+        }
+        const square = new Square(10);
+        console.log('둘레1 :'+square.getP(),'면적1 :'+square.getA())
+    </script>
+</body>
+</html>
