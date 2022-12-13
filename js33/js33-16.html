@@ -6,6 +6,7 @@
 <body>
     <script>
         class Person{
+            #age;
             constructor(name,age,gender){
                 this.name = name;
                 this.age = age;
@@ -13,17 +14,17 @@
             }
             // getter
             get age(){
-                return this._age
+                return this.#age
             }
 
             // setter
             set age(value){
                 if(value>0 && value < 90){
-                    this._age = value;
+                    this.#age = value;
                 }
             }
             print(){
-                console.log('이름:'+this.name+' 나이:'+this._age+' 성별:'+this.gender);
+                console.log('이름 :'+this.name+' 나이 :'+this.#age+' 성별 :'+this.gender);
             }
         }
     </script>
