@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>class static</title>
+</head>
+<body>
+    <script>
+        /* 방식1 */
+        // class User{
+        //     static staticMethod(){
+        //         alert (this === User);
+        //     }
+        // }
+        // User.staticMethod()  // static은 이 구문 써야함
+
+        /* 방식2 */
+        class User{}
+        User.staticMethod = function(){  // 함수 표현식
+            alert (this === User)
+        }
+        User.staticMethod()
+    </script>
+</body>
+</html>

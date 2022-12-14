@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class LifeCycle{}
+        class Child extends LifeCycle{
+            a(){
+                super.a()
+                console.log('자식의 a() 메소드입니다');
+            }
+        }
+        new Child().call()
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>static 속성과 메소드</title>
+</head>
+<body>
+    <script>
+        class Square{
+            #length
+            static #counter = 0; // 최신의 문법 static+private 동시에 적용
+            // 읽기 전용
+            static get counter (){ // get 과 static 
+                return Square.#counter
+            }
+            constructor (length){
+                this.length = length
+                Square.#counter += 1  // 몇개가 생성 됐는지 확인
+            }
+            static perimeterOf(length){
+                return length * 4
+            }
+            static areaOf(length){
+                return length = length
+            }
+
+            get legnth(){
+                return this.#length
+            }
+            get perimeter(){
+                return this.#length *4
+            }
+            get area(){
+                return this.#length * this.#length
+            }
+
+            // 쓰기 전용 set에 값을 넣을때는 = 을 쓴다.
+            set length(value){
+                if (value <= 0){
+                    throw '길이는 0보다 커야합니다.'
+                }
+                this.#length = value; // 핵심 부분!!
+            }
+        }
+
+        const squareA = new Square(10)
+        const squareB = new Square(20)
+        const squareC = new Square(30)
+
+        console.log(`지금까지 생성된 Square 인스턴스는 ${Square.counter}개 입니다.`);
+        console.log(`한 변의 길이가 20인 정사각형의 둘레는 ${Square.perimeterOf(20)} 입니다.`)
+        console.log(`한 변이 길이가 30인 정사각형의 넓이는 ${Square.areaOf(30)}입니다.`);
+    </script>
+</body>
+</html>
