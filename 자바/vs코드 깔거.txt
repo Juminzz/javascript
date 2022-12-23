@@ -1,0 +1,7 @@
+vs코드 깔거
+code runner , color Picker , ESlint , git graph , 
+github pull requests and lssues , html play
+javascript (ES6) code snippets
+Korean Language , live server , material icon theme
+prettier code formatter , rainbow brackets , 
+tabnine ai autocomplete
